@@ -1,0 +1,3650 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TinyFontBuilder</name>
+    </assembly>
+    <members>
+        <member name="T:Terka.TinyFonts.GlyphMetadataAppendix">
+            <summary>
+            Font appendix for glyph metadata.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.FontAppendix">
+            <summary>
+            Font appendix storage base class.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontAppendix.GlyphClasses">
+            <summary>
+            ID of glyph classes appendix.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontAppendix.Glyphs">
+            <summary>
+            ID of glyphs appendix.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontAppendix.GlyphMetadata">
+            <summary>
+            ID of glyphs metadata appendix.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontAppendix.PositioningMachine">
+            <summary>
+            ID of positioning machine appendix.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontAppendix.SubstitutionMachine">
+            <summary>
+            ID of substitution machine appendix.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontAppendix.FontStrings">
+            <summary>
+            ID of font strings appendix.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontAppendix.UnicodePlane">
+            <summary>
+            ID of unicode plane appendix.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontAppendix.AttachmentPoints">
+            <summary>
+            ID of attachment points appendix.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.FontAppendix.GetSize(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Gets size of this appendix.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.FontAppendix.#ctor(System.Byte)">
+            <summary>
+            Creates new instance of font appendix specified by its ID.
+            </summary>
+            <param name="id">Font appendix ID.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.FontAppendix.ReadFrom(System.IO.BinaryReader,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <param name="font">The <see cref="T:Terka.TinyFonts.TinyFont"/> containing this appendix.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.FontAppendix.WriteTo(System.IO.BinaryWriter,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <param name="font">The <see cref="T:Terka.TinyFonts.TinyFont"/> containing this appendix.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.FontAppendix.Update(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+            <param name="font">The <see cref="T:Terka.TinyFonts.TinyFont"/> containing this appendix.</param>
+        </member>
+        <member name="P:Terka.TinyFonts.FontAppendix.ID">
+            <summary>
+            Gets ID of this font appendix.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontAppendix.HasContent">
+            <summary>
+            Gets if this font appendix has any valid content.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.GlyphMetadataAppendix.GraphemeSet">
+            <summary>
+            ID of grapheme metadata.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.GlyphMetadataAppendix.MarginTopSet">
+            <summary>
+            ID of top margin metadata.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.GlyphMetadataAppendix.MarginBottomSet">
+            <summary>
+            ID of bottom margin metadata.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphMetadataAppendix.GetSize(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Gets size of this appendix.
+            </summary>
+            <param name="font">Tiny Font containing this appendix.</param>
+            <returns>Size in bytes.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphMetadataAppendix.#ctor">
+            <summary>
+            Creates new instance of appendix.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphMetadataAppendix.ReadFrom(System.IO.BinaryReader,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <param name="font">The <see cref="T:Terka.TinyFonts.TinyFont"/> containing this appendix.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphMetadataAppendix.WriteTo(System.IO.BinaryWriter,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <param name="font">The <see cref="T:Terka.TinyFonts.TinyFont"/> containing this appendix.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphMetadataAppendix.Update(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+            <param name="font">The <see cref="T:Terka.TinyFonts.TinyFont"/> containing this appendix.</param>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphMetadataAppendix.Sets">
+            <summary>
+            Gets metadata set collection in this appendix.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphMetadataAppendix.SetsOffsets">
+            <summary>
+            Gets offsets of sets.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphMetadataAppendix.HasContent">
+            <summary>
+            Gets if appendix has any valid content.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.GlyphMetadataAppendix.MetadataSetBitLength">
+            <summary>
+            How many bits are reserved for each character in metadata set.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.GlyphMetadataAppendix.MetadataSetBitLength.One">
+            <summary>
+            One bit per character.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.GlyphMetadataAppendix.MetadataSetBitLength.Two">
+            <summary>
+            Two bits per character.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.GlyphMetadataAppendix.MetadataSetBitLength.Four">
+            <summary>
+            Four bits per character.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.GlyphMetadataAppendix.MetadataSetBitLength.Eight">
+            <summary>
+            One byte per character.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.GlyphMetadataAppendix.MetadataSetOffset">
+            <summary>
+            Basic characteristics for one metadata set. Each metadata set contains information for each character in font.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphMetadataAppendix.MetadataSetOffset.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphMetadataAppendix.MetadataSetOffset.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphMetadataAppendix.MetadataSetOffset.Id">
+            <summary>
+            Gets or sets byte identifier for this metadata set.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphMetadataAppendix.MetadataSetOffset.Bits">
+            <summary>
+            Gets or sets how many bits of data are used for each character.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphMetadataAppendix.MetadataSetOffset.Offset">
+            <summary>
+            Gets or sets metadata offset in bytes in appendix.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.TinyFontBuilder">
+            <summary>
+            Tiny Font Builder.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.#ctor">
+            <summary>
+            Creates new instance.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.#ctor(System.Windows.Media.GlyphTypeface)">
+            <summary>
+            Creates new instance with defined glyph typeface.
+            </summary>
+            <param name="typeface">Glyph typeface to use.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.#ctor(System.Windows.Media.GlyphTypeface,System.Double)">
+            <summary>
+            Creates new instance with defined glyph typeface and Em size.
+            </summary>
+            <param name="typeface">Glyph typface to use.</param>
+            <param name="emSize">Character's Em Size.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.#ctor(System.Windows.Media.GlyphTypeface,System.Double,Terka.TinyFonts.AntialiasingLevel)">
+            <summary>
+            Creates new instance with defined glyph typeface, Em size and anti-aliasing level.
+            </summary>
+            <param name="typeface">Glyph typface to use.</param>
+            <param name="emSize">Character's Em Size.</param>
+            <param name="antialiasingLevel">Anti-aliasing level.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.ImportFeature(System.String,System.String,System.String)">
+            <summary>
+            Imports OpenType font's feature to Tiny Font.
+            </summary>
+            <param name="script">Tag of script in which look for feature.</param>
+            <param name="language">Tag of language in which look for feature.</param>
+            <param name="feature">Tag of feature which look up.</param>
+            <returns>True if feature was found in typeface.</returns>
+            <exception cref="T:System.InvalidOperationException">If <see cref="P:Terka.TinyFonts.TinyFontBuilder.OpenTypeCompiler"/> is missing.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.ImportFeature(System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+            Imports OpenType font's feature to Tiny Font.
+            </summary>
+            <param name="script">Id of script in which look for feature.</param>
+            <param name="language">Id of language in which look for feature.</param>
+            <param name="feature">Id of feature which look up.</param>
+            <returns>True if feature was found in typeface.</returns>
+            <exception cref="T:System.InvalidOperationException">If <see cref="P:Terka.TinyFonts.TinyFontBuilder.OpenTypeCompiler"/> is missing.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.ImportGraphemeClusterBoundaries">
+            <summary>
+            Imports grapheme cluster boundaries as defined in Unicode standard to Tiny Font.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.ImportVerticalMetrics">
+            <summary>
+            Imports vertical metrics needed for vertical text rendering.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.ImportRequiredFeatures(System.UInt32,System.UInt32)">
+            <summary>
+            Imports OpenType's font required features to Tiny Font.
+            </summary>
+            <param name="script">Id of script for which import features.</param>
+            <param name="language">Id of language for which import features.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.ImportRequiredFeatures(System.String,System.String)">
+            <summary>
+            Imports OpenType's font required features to Tiny Font.
+            </summary>
+            <param name="script">Tag of script for which import features.</param>
+            <param name="language">Tag of language for which import features.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.ImportAsDefault(System.Int32)">
+            <summary>
+            Imports default character which will be showed instead of characters thar are missing in Tiny Font.
+            </summary>
+            <param name="defaultCharacter">Default character.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.Import(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Imports collection of characters specified by its code.
+            </summary>
+            <param name="characters">Collection of characters.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.Import(System.String)">
+            <summary>
+            Imports characters in string to Tiny Font.
+            </summary>
+            <param name="characters">String containing characters to import.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="characters"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.Import(System.Char[])">
+            <summary>
+            Imports characeters to Tiny Font.
+            </summary>
+            <param name="characters">Characters to import.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.ImportAsDefault(System.UInt16)">
+            <summary>
+            Imports glyph specified by its ID as default in Tiny Font.
+            </summary>
+            <param name="defaultGlyph">ID of glyph.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.Import(System.Collections.Generic.IEnumerable{System.UInt16})">
+            <summary>
+            Imports collection of glyph IDs to Tiny Font.
+            </summary>
+            <param name="glyphs">Collection of glyphs.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.ImportGlyphAsCharacter(System.UInt16,System.Int32)">
+            <summary>
+            Imports glyph specified by its code as character.
+            </summary>
+            <param name="glyph">ID of glyph.</param>
+            <param name="character">Character representing <paramref name="glyph"/></param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.Build">
+            <summary>
+            Assembles new Tiny Font from imports.
+            </summary>
+            <returns>Tiny Font.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.Build(System.String,System.Boolean)">
+            <summary>
+            Assembles new Tiny Font from imports and imports <paramref name="characters"/> to Tiny Font.
+            </summary>
+            <param name="characters">Characters to import.</param>
+            <param name="includeDefaultCharacter">Include default character?</param>
+            <returns>Tiny Font.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.Build(System.Collections.Generic.IEnumerable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Assembles new Tiny Font from imports and adds <paramref name="characters"/> to the font.
+            </summary>
+            <param name="characters">Characters to import.</param>
+            <param name="defaultCharacter">Default Tiny Font character.</param>
+            <returns>Tiny Font.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.Build(System.Collections.Generic.IEnumerable{System.UInt16},System.Nullable{System.UInt16})">
+            <summary>
+            Assembles new Tiny Font from imports and adds <paramref name="glyphs"/> to the font.
+            </summary>
+            <param name="glyphs">Glyphs to import.</param>
+            <param name="defaultCharacterGlyph">Default glyph in Tiny Font.</param>
+            <returns>Tiny Font.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFontBuilder.GetAssignedGlyphCharacters">
+            <summary>
+            Gets assigment of glyphs to characters.
+            </summary>
+            <returns>Glyph to character mapping.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFontBuilder.Trace">
+            <summary>
+            Gets a trace source for the builder.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFontBuilder.GlyphTypeface">
+            <summary>
+            Gets or sets glyph typeface.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFontBuilder.GlyphToCharacterMap">
+            <summary>
+            Gets a glyph to character map for the current typeface.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFontBuilder.AntialiasingLevel">
+            <summary>
+            Gets or sets anti-aliasing level.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFontBuilder.GlyphTransform">
+            <summary>
+            Gets or sets glyph transformation.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFontBuilder.GlyphTransformOrigin">
+            <summary>
+            Gets or sets glyph transformation origin.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFontBuilder.OpenTypeCompiler">
+            <summary>
+            Gets or sets OpenType compiler.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFontBuilder.EmSize">
+            <summary>
+            Gets or sets characters's Em Size.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.Resources.GraphemeBreakProperty">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.AttachmentPointsAppendix">
+            <summary>
+            Appendix for storing attachment points.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.AttachmentPointsAppendix.GetSize(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Gets size of this appendix in bytes.
+            </summary>
+            <param name="font"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terka.TinyFonts.AttachmentPointsAppendix.#ctor">
+            <summary>
+            Creates new instance of this appendix.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.AttachmentPointsAppendix.ReadFrom(System.IO.BinaryReader,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <param name="font">Tiny Font containing this appendix.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.AttachmentPointsAppendix.WriteTo(System.IO.BinaryWriter,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <param name="font">Tiny Font containing this appendix.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.AttachmentPointsAppendix.Update(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+            <param name="font">Tiny Font containing this appendix.</param>
+        </member>
+        <member name="T:Terka.TinyFonts.AttachmentPointsAppendix.AttachmentList">
+            <summary>
+            List of attachment points.  
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.AttachmentPointsAppendix.AttachmentList.#ctor">
+            <summary>
+            Creates new instance.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.AttachmentPointsAppendix.AttachmentList.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.AttachmentPointsAppendix.AttachmentList.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.AttachmentPointsAppendix.AttachmentList.Update">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.AttachmentPointsAppendix.AttachmentList.Count">
+            <summary>
+            Gets or sets how many attachment points are stored in this appendix.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.AttachmentPointsAppendix.AttachmentList.Points">
+            <summary>
+            Gets or sets attachment points.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.AttachmentPointsAppendix.AttachmentPoint">
+            <summary>
+            Represents single attachment point.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.AttachmentPointsAppendix.AttachmentPoint.X">
+            <summary>
+            X position of attachment point.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.AttachmentPointsAppendix.AttachmentPoint.Y">
+            <summary>
+            Y position of attachment point.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.AttachmentPointsAppendix.AttachmentPoint.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.AttachmentPointsAppendix.AttachmentPoint.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="T:Terka.TinyFonts.StateMachineAppendix">
+            <summary>
+            Base class for state machine based appendicies.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.GetSize(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Gets total size in bytes of this appendix.
+            </summary>
+            <param name="font"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.#ctor(System.Byte)">
+            <summary>
+            Creates a new instance of state machine appendix by its ID.
+            </summary>
+            <param name="id">Font appendix ID,</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.ReadFrom(System.IO.BinaryReader,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <param name="font">Tiny Font containing this appendix.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.WriteTo(System.IO.BinaryWriter,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <param name="font">Tiny Font containing this appendix.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.Update(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+            <param name="font">Tiny Font containing this appendix.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.AppendParameters(Terka.TinyFonts.StateMachineAppendix.HeapParameters)">
+            <summary>
+            Appends parameters to heap. If heap does not exists, new is created.
+            </summary>
+            <param name="parameters">Parameters to store on heap.</param>
+            <returns>Zero-based offset to heap, where appended data begins.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="parameters"/> are null.</exception>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.HasContent">
+            <summary>
+            Gets if this appendix has any valid content.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.FeatureCount">
+            <summary>
+            Gets or sets how many features are stored in this appendix.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.ParametersHeapSize">
+            <summary>
+            Gets or sets size of parameters heap in bytes.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.FeatureOffsets">
+            <summary>
+            Gets feature offsets collection stored in this appendix.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Features">
+            <summary>
+            Gets features collection stored in this appendix.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.ParametersHeap">
+            <summary>
+            Gets or sets heap for feature's parameters.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.StateMachineAppendix.HeapParameters">
+            <summary>
+            Base class for heap parameters which are stored in global appendix heap.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.HeapParameters.ReadFrom(System.Byte[],System.Int32)">
+            <summary>
+            Reads parameters from byte array <paramref name="data"/> starting from zero-base <paramref name="offset"/>.
+            </summary>
+            <param name="data">Byte array containing heap.</param>
+            <param name="offset">Zero-based offset to <paramref name="data"/> heap.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.HeapParameters.WriteTo(System.Byte[],System.Int32)">
+            <summary>
+            Writes parameters to byte array <paramref name="data"/> starting on zero-based <paramref name="offset"/>.
+            </summary>
+            <param name="data">Heap data.</param>
+            <param name="offset">Starting offset in <paramref name="data"/>.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.HeapParameters.Update">
+            <summary>
+            Upd
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.HeapParameters.GetSize">
+            <summary>
+            Gets size in bytes of parameters.
+            </summary>
+            <returns>Size in bytes.</returns>
+        </member>
+        <member name="T:Terka.TinyFonts.StateMachineAppendix.PositionChange">
+            <summary>
+            Describes glyph position changes.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.PositionChange.#ctor">
+            <summary>
+            Creates new instance.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.PositionChange.#ctor(System.SByte,System.SByte,System.SByte,System.SByte)">
+            <summary>
+            Creates new instance with predefined values.
+            </summary>
+            <param name="offsetX">Relative X-offset change.</param>
+            <param name="offsetY">Relative Y-offset change.</param>
+            <param name="advanceX">Relative X-advance change.</param>
+            <param name="advanceY">Relative Y-advance change.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.PositionChange.ReadFrom(System.Byte[],System.Int32)">
+            <summary>
+            Reads parameters from byte array <paramref name="heap"/> starting from zero-base <paramref name="offset"/>.
+            </summary>
+            <param name="heap">Byte array containing heap.</param>
+            <param name="offset">Zero-based offset to <paramref name="heap"/> heap.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.PositionChange.WriteTo(System.Byte[],System.Int32)">
+            <summary>
+            Writes parameters to byte array <paramref name="heap"/> starting on zero-based <paramref name="offset"/>.
+            </summary>
+            <param name="heap">Heap data.</param>
+            <param name="offset">Starting offset in <paramref name="heap"/>.</param>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.PositionChange.OffsetX">
+            <summary>
+            Gets or sets X-offset relative position change.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.PositionChange.OffsetY">
+            <summary>
+            Gets or sets Y-offset relative position change.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.PositionChange.AdvanceX">
+            <summary>
+            Gets or sets X-advance relative position change.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.PositionChange.AdvanceY">
+            <summary>
+            Gets or sets Y-advance relative position change.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.StateMachineAppendix.PositionChangesParameters">
+            <summary>
+            Position change heap parameters.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.PositionChangesParameters.#ctor">
+            <summary>
+            Creates new instance of position change parameters.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.PositionChangesParameters.ReadFrom(System.Byte[],System.Int32)">
+            <summary>
+            Reads parameters from byte array <paramref name="data"/> starting from zero-base <paramref name="offset"/>.
+            </summary>
+            <param name="data">Byte array containing heap.</param>
+            <param name="offset">Zero-based offset to <paramref name="data"/> heap.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.PositionChangesParameters.WriteTo(System.Byte[],System.Int32)">
+            <summary>
+            Writes parameters to byte array <paramref name="data"/> starting on zero-based <paramref name="offset"/>.
+            </summary>
+            <param name="data">Heap data.</param>
+            <param name="offset">Starting offset in <paramref name="data"/>.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.PositionChangesParameters.Update">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.PositionChangesParameters.GetSize">
+            <summary>
+            Gets size in bytes of parameters.
+            </summary>
+            <returns>Size in bytes.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.PositionChangesParameters.Count">
+            <summary>
+            Gets or sets how many position changes are.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.PositionChangesParameters.PositionChanges">
+            <summary>
+            Gets list of position changes.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.StateMachineAppendix.FeatureFlags">
+            <summary>
+            Flags for executing features.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.FeatureFlags.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.FeatureFlags.Reverse">
+            <summary>
+            Feature is executed in opposite direction.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.StateMachineAppendix.GlyphRewriteParameters">
+            <summary>
+            Glyph rewriting heap parameters.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.GlyphRewriteParameters.#ctor">
+            <summary>
+            Creates new instance of rewriting parameters.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.GlyphRewriteParameters.#ctor(System.Byte,System.Int32[])">
+            <summary>
+            Creates new instance of rewriting parameters.
+            </summary>
+            <param name="rewriteCount">How many glyphs will be rewrited.</param>
+            <param name="glyphs">Which glyphs will be written.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.GlyphRewriteParameters.ReadFrom(System.Byte[],System.Int32)">
+            <summary>
+            Reads parameters from byte array <paramref name="data"/> starting from zero-base <paramref name="offset"/>.
+            </summary>
+            <param name="data">Byte array containing heap.</param>
+            <param name="offset">Zero-based offset to <paramref name="data"/> heap.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.GlyphRewriteParameters.WriteTo(System.Byte[],System.Int32)">
+            <summary>
+            Writes parameters to byte array <paramref name="data"/> starting on zero-based <paramref name="offset"/>.
+            </summary>
+            <param name="data">Heap data.</param>
+            <param name="offset">Starting offset in <paramref name="data"/>.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.GlyphRewriteParameters.Update">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.GlyphRewriteParameters.GetSize">
+            <summary>
+            Gets size in bytes of parameters.
+            </summary>
+            <returns>Size in bytes.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.GlyphRewriteParameters.RewriteCount">
+            <summary>
+            Gets or sets how many glyphs should be rewrited.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.GlyphRewriteParameters.WriteCount">
+            <summary>
+            Gets or sets how many glyphs should be written.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.GlyphRewriteParameters.Glyphs">
+            <summary>
+            Gets glyphs to be written.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.StateMachineAppendix.RuleCondition">
+            <summary>
+            Conditions are represented by unsigned numbers.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleCondition.Unconditional">
+            <summary>
+            Rule is always applied.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleCondition.Glyph">
+            <summary>
+            Rule is applied if and only if the glyph is of specified number.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleCondition.GlyphClass">
+            <summary>
+            Rule is applied if and only if the glyph belongs to specific group class.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleCondition.Feature">
+            <summary>
+            Rule is applied if and only if the user required specific feature. For details, see Rules organization.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleCondition.OutOfTape">
+            <summary>
+            Rule is applied if and only if the position of condition is not valid.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleCondition.GlyphProperty">
+            <summary>
+            Rule is applied if and only if the glyph has a specified property.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.StateMachineAppendix.RuleAction">
+            <summary>
+            Actions for substitution machines.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.Nothing">
+            <summary>
+            No action is performed. Such rules can be used when only changing the state and/or advancing the tape is desired.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphOverwrite">
+            <summary>
+            The glyph number will be replaced by the specified glyph number.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphRewrite_2_1">
+            <summary>
+            Two consecutive glyph numbers will be replaced by the specified glyph number.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphRewrite_3_1">
+            <summary>
+            Three consecutive glyph numbers will be replaced by the specified glyph number.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphRewrite_N_M">
+            <summary>
+            N consecutive glyphs will be replaced by M ones, as defined in the parameters heap.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphDeletion">
+            <summary>
+            The specified number of glyphs will be deleted.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphInsertion">
+            <summary>
+            The specified glyph will be inserted.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_Ax_xA">
+            <summary>
+            Glyph reorder Ax→xA.      
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_xD_Dx">
+            <summary>
+            Glyph reorder xD→Dx.      
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_AxD_DxA">
+            <summary>
+            Glyph reorder AxD→DxA.    
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_ABx_xAB">
+            <summary>
+            Glyph reorder ABx→xAB.    
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_xCD_CDx">
+            <summary>
+            Glyph reorder xCD→CDx.    
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_xCD_DCx">
+            <summary>
+            Glyph reorder xCD→DCx.    
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_AxCD_CDxA">
+            <summary>
+            Glyph reorder AxCD→CDxA.  
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_AxCD_DCxA">
+            <summary>
+            Glyph reorder AxCD→DCxA.  
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_ABxD_DxAB">
+            <summary>
+            Glyph reorder ABxD→DxAB.  
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_ABxD_DxBA">
+            <summary>
+            Glyph reorder ABxD→DxBA.  
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_ABxCD_CDxAB">
+            <summary>
+            Glyph reorder ABxCD→CDxAB.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_ABxCD_CDxBA">
+            <summary>
+            Glyph reorder ABxCD→CDxBA.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_ABxCD_DCxAB">
+            <summary>
+            Glyph reorder ABxCD→DCxAB.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.GlyphReorder_ABxCD_DCxBA">
+            <summary>
+            Glyph reorder ABxCD→DCxBA.</summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.PositionOffset">
+            <summary>
+            Relative change to glyph offset.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.PositionAdvance">
+            <summary>
+            Relative change to glyph advances.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.StateMachineAppendix.RuleAction.PositionComplex">
+            <summary>
+            Complex relative change of glyph's positions, mutliple changes or offsets and advances together.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.StateMachineAppendix.Rule">
+            <summary>
+            Class representing one state machine r
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.Rule.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.Rule.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.Rule.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Rule.RequiredState">
+            <summary>
+            Gets or sets required state.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Rule.NewState">
+            <summary>
+            Gets or sets new state.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Rule.Condition">
+            <summary>
+            Gets or sets condition for this rule.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Rule.ConditionOffset">
+            <summary>
+            Gets or sets condititon offset.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Rule.ConditionParameter">
+            <summary>
+            Gets or sets condition parameter.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Rule.Action">
+            <summary>
+            Gets or sets rule action.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Rule.ActionOffset">
+            <summary>
+            Gets or sets action offset.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Rule.ActionParameter">
+            <summary>
+            Gets or sets action parameter.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Rule.TapeMovement">
+            <summary>
+            Gets or sets tape movement.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Rule.ConditionPlane">
+            <summary>
+            Gets or sets plane of condition part.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Rule.ActionPlane">
+            <summary>
+            Gets or sets plane of action part.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Rule.Reserved3">
+            <summary>
+            Reserved for future use.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.StateMachineAppendix.Feature">
+            <summary>
+            Represents one feature.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.Feature.#ctor">
+            <summary>
+            Creates new instance of feature.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.Feature.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.Feature.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.Feature.Update">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Feature.StateCount">
+            <summary>
+            Gets or sets the number of states, includes the initial one.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Feature.StateOffsets">
+            <summary>
+            Gets offets of states.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.Feature.Rules">
+            <summary>
+            Gets rules for state machine.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.StateMachineAppendix.FeatureOffset">
+            <summary>
+            Feature offset description.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.FeatureOffset.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.StateMachineAppendix.FeatureOffset.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.FeatureOffset.Tag">
+            <summary>
+            Gets or sets corresponding feature tag from OpenType.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.FeatureOffset.Offset">
+            <summary>
+            Gets or sets the offset to the feature data.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.FeatureOffset.Flags">
+            <summary>
+            Gets or sets flags for feature.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.StateMachineAppendix.FeatureOffset.IsReverse">
+            <summary>
+            Gets or sets reverse flag for feature.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.SubstitutionAppendix">
+            <summary>
+            Font appendix for substitution state machine.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.SubstitutionAppendix.#ctor">
+            <summary>
+            Appendix for substitutioning information (from GSUB OpenType table).
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.PositioningAppendix">
+            <summary>
+            Font appendix for positioning state machine.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.PositioningAppendix.#ctor">
+            <summary>
+            Appendix for positioninig information (from GPOS OpenType table).
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.FontPlane">
+            <summary>
+            Describes font plane (same for basic and extended planes).
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.FontPlane.#ctor">
+            <summary>
+            Creates new font plane.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.FontPlane.ReadFrom(System.IO.BinaryReader,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <param name="font">The <see cref="T:Terka.TinyFonts.TinyFont"/> containing this appendix.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.FontPlane.WriteTo(System.IO.BinaryWriter,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <param name="font">The <see cref="T:Terka.TinyFonts.TinyFont"/> containing this appendix.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.FontPlane.Update">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontPlane.Metrics">
+            <summary>
+            Gets or sets font metrics.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontPlane.Description">
+            <summary>
+            Gets or sets font description.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontPlane.CharacterBitmap">
+            <summary>
+            Gets or sets character bitmap.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontPlane.CharacterRanges">
+            <summary>
+            Gets or sets character ranges. The sequence of character ranges is ended by a sentinel character range, which has all fields set to zero except the range offset, which is set to the bitmap’s width.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontPlane.Characters">
+            <summary>
+            Gets or sets characters of this plane. The sequence is ended by a sentinel character, which has all fields set to zero.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontPlane.CharacterBitmapData">
+            <summary>
+            Gets or sets characters raw bitmap data. 
+            The image is stored top to bottom by rows, left to right in bits from the least significant bit (LSB) to the most significant bit (MSB).
+            All included characters are stacked on a single row, side by side to the right in the order of range and character sequences.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontPlane.CharacterAntialiasingMetrics">
+            <summary>
+            Gets or sets anti-aliasing metrics for characters.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontPlane.CharacterRangesAntialiasing">
+            <summary>
+            Gets or sets character range anti-aliasing offsets.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontPlane.CharactersAntialiasing">
+            <summary>
+            Gets or sets character anti-aliasing offsets.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontPlane.CharacterAntialiasingData">
+            <summary>
+            Gets or sets the anti-aliasing data for Tiny Font.
+            Data are raw values without any alignment. The total size of anti-alias data, however, is aligned at 4 byte boundary, so the number of bytes is equal to antialias size plus eventual padding.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontPlane.HasContent">
+            <summary>
+            Gets if this font plane has any valid content.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.DWriteCreateFactory(Win32.DWrite.FactoryType,System.Guid)">
+            <summary>
+            Creates a DirectWrite factory object that is used for subsequent creation of individual DirectWrite objects.
+            </summary>
+            <param name="factoryType">A value that specifies whether the factory object will be shared or isolated.</param>
+            <param name="iid">A GUID value that identifies the DirectWrite factory interface, such as __uuidof(IDWriteFactory).</param>
+            <returns></returns>
+            <remarks>
+            This function creates a DirectWrite factory object that is used for subsequent creation of individual DirectWrite objects.
+            DirectWrite factory contains internal state data such as font loader registration and cached font data.
+            In most cases it is recommended you use the shared factory object, because it allows multiple components that use DirectWrite to share internal DirectWrite state data,
+            and thereby reduce memory usage. However, there are cases when it is desirable to reduce the impact of a component, such as a plug-in from an untrusted source,
+            on the rest of the process, by sandboxing and isolating it from the rest of the process components. In such cases, it is recommended you use an isolated factory for the sandboxed component.
+            </remarks>
+        </member>
+        <member name="T:Win32.DWrite.FontFileType">
+            <summary>
+            The type of a font represented by a single font file.
+            Font formats that consist of multiple files, e.g. Type 1 .PFM and .PFB, have
+            separate enum values for each of the file type.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFileType.Unknown">
+            <summary>
+            Font type is not recognized by the DirectWrite font system.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFileType.Cff">
+            <summary>
+            OpenType font with CFF outlines.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFileType.TrueType">
+            <summary>
+            OpenType font with TrueType outlines.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFileType.TrueTypeCollection">
+            <summary>
+            OpenType font that contains a TrueType collection.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFileType.Type1Pfm">
+            <summary>
+            Type 1 PFM font.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFileType.Type1Pfb">
+            <summary>
+            Type 1 PFB font.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFileType.Vector">
+            <summary>
+            Vector .FON font.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFileType.Bitmap">
+            <summary>
+            Bitmap .FON font.
+            </summary>
+        </member>
+        <member name="T:Win32.DWrite.FontSimulations">
+            <summary>
+            Specifies algorithmic style simulations to be applied to the font face.
+            Bold and oblique simulations can be combined via bitwise OR operation.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontSimulations.None">
+            <summary>
+            No simulations are performed.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontSimulations.Bold">
+            <summary>
+            Algorithmic emboldening is performed.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontSimulations.Oblique">
+            <summary>
+            Algorithmic italicization is performed.
+            </summary>
+        </member>
+        <member name="T:Win32.DWrite.FontFaceType">
+            <summary>
+            The file format of a complete font face.
+            Font formats that consist of multiple files, e.g. Type 1 .PFM and .PFB, have
+            a single enum entry.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFaceType.Cff">
+            <summary>
+            OpenType font face with CFF outlines.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFaceType.TrueType">
+            <summary>
+            OpenType font face with TrueType outlines.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFaceType.TrueTypeCollection">
+            <summary>
+            OpenType font face that is a part of a TrueType collection.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFaceType.Type1">
+            <summary>
+            A Type 1 font face.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFaceType.Vector">
+            <summary>
+            A vector .FON format font face.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFaceType.Bitmap">
+            <summary>
+            A bitmap .FON format font face.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFaceType.Unknown">
+            <summary>
+            Font face type is not recognized by the DirectWrite font system.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FontFaceType.RawCff">
+            <summary>
+            The font data includes only the CFF table from an OpenType CFF font.
+            This font face type can be used only for embedded fonts (i.e., custom
+            font file loaders) and the resulting font face object supports only the
+            minimum functionality necessary to render glyphs.
+            </summary>
+        </member>
+        <member name="T:Win32.DWrite.FactoryType">
+            <summary>
+            Specifies the type of DirectWrite factory object.
+            </summary>
+            <remarks>
+            DirectWrite factory contains internal state such as font loader registration and cached font data.
+            In most cases it is recommended to use the shared factory object, because it allows multiple components
+            that use DirectWrite to share internal DirectWrite state and reduce memory usage.
+            However, there are cases when it is desirable to reduce the impact of a component,
+            such as a plug-in from an untrusted source, on the rest of the process by sandboxing and isolating it
+            from the rest of the process components. In such cases, it is recommended to use an isolated factory for the sandboxed
+            component.
+            </remarks>
+        </member>
+        <member name="F:Win32.DWrite.FactoryType.Shared">
+            <summary>
+            Shared factory allow for re-use of cached font data across multiple in process components.
+            Such factories also take advantage of cross process font caching components for better performance.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.FactoryType.Isolated">
+            <summary>
+            Objects created from the isolated factory do not interact with internal DirectWrite state from other components.
+            </summary>
+        </member>
+        <member name="T:Win32.DWrite.MeasuringMode">
+            <summary>
+            The measuring method used for text layout.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.MeasuringMode.Natural">
+            <summary>
+            Text is measured using glyph ideal metrics whose values are independent to the current display resolution.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.MeasuringMode.GdiClassic">
+            <summary>
+            Text is measured using glyph display compatible metrics whose values tuned for the current display resolution.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.MeasuringMode.GdiNatural">
+            <summary>
+            Text is measured using the same glyph display metrics as text measured by GDI using a font created with CLEARTYPE_NATURAL_QUALITY.
+            </summary>
+        </member>
+        <member name="T:Win32.DWrite.PixelGeometry">
+            <summary>
+            Represents the internal structure of a device pixel (i.e., the physical arrangement of red,
+            green, and blue color components) that is assumed for purposes of rendering text.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.PixelGeometry.Flat">
+            <summary>
+            The red, green, and blue color components of each pixel are assumed to occupy the same point.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.PixelGeometry.Rgb">
+            <summary>
+            Each pixel comprises three vertical stripes, with red on the left, green in the center, and 
+            blue on the right. This is the most common pixel geometry for LCD monitors.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.PixelGeometry.Bgr">
+            <summary>
+            Each pixel comprises three vertical stripes, with blue on the left, green in the center, and 
+            red on the right.
+            </summary>
+        </member>
+        <member name="T:Win32.DWrite.RenderingMode">
+            <summary>
+            Represents a method of rendering glyphs.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.RenderingMode.Default">
+            <summary>
+            Specifies that the rendering mode is determined automatically based on the font and size.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.RenderingMode.Aliased">
+            <summary>
+            Specifies that no antialiasing is performed. Each pixel is either set to the foreground 
+            color of the text or retains the color of the background.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.RenderingMode.GdiClassic">
+            <summary>
+            Specifies that antialiasing is performed in the horizontal direction and the appearance
+            of glyphs is layout-compatible with GDI using CLEARTYPE_QUALITY. Use DWRITE_MEASURING_MODE_GDI_CLASSIC 
+            to get glyph advances. The antialiasing may be either ClearType or grayscale depending on
+            the text antialiasing mode.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.RenderingMode.GdiNatural">
+            <summary>
+            Specifies that antialiasing is performed in the horizontal direction and the appearance
+            of glyphs is layout-compatible with GDI using CLEARTYPE_NATURAL_QUALITY. Glyph advances
+            are close to the font design advances, but are still rounded to whole pixels. Use
+            DWRITE_MEASURING_MODE_GDI_NATURAL to get glyph advances. The antialiasing may be either
+            ClearType or grayscale depending on the text antialiasing mode.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.RenderingMode.Natural">
+            <summary>
+            Specifies that antialiasing is performed in the horizontal direction. This rendering
+            mode allows glyphs to be positioned with subpixel precision and is therefore suitable
+            for natural (i.e., resolution-independent) layout. The antialiasing may be either
+            ClearType or grayscale depending on the text antialiasing mode.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.RenderingMode.NaturalSymmetric">
+            <summary>
+            Similar to natural mode except that antialiasing is performed in both the horizontal
+            and vertical directions. This is typically used at larger sizes to make curves and
+            diagonal lines look smoother. The antialiasing may be either ClearType or grayscale
+            depending on the text antialiasing mode.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.RenderingMode.Outline">
+            <summary>
+            Specifies that rendering should bypass the rasterizer and use the outlines directly. 
+            This is typically used at very large sizes.
+            </summary>
+        </member>
+        <member name="T:Win32.DWrite.TextAntialiasMode">
+            <summary>
+            Represents the type of antialiasing to use for text when the rendering mode calls for
+            antialiasing.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.TextAntialiasMode.ClearType">
+            <summary>
+            ClearType antialiasing computes coverage independently for the red, green, and blue
+            color elements of each pixel. This allows for more detail than conventional antialiasing.
+            However, because there is no one alpha value for each pixel, ClearType is not suitable
+            rendering text onto a transparent intermediate bitmap.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.TextAntialiasMode.GrayScale">
+            <summary>
+            Grayscale antialiasing computes one coverage value for each pixel. Because the alpha
+            value of each pixel is well-defined, text can be rendered onto a transparent bitmap, 
+            which can then be composited with other content. Note that grayscale rendering with
+            IDWriteBitmapRenderTarget1 uses premultiplied alpha.
+            </summary>
+        </member>
+        <member name="T:Win32.DWrite.IDWriteBitmapRenderTarget1">
+            <summary>
+            Encapsulates a 32-bit device independent bitmap and device context, which can be used for rendering glyphs.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget1.DrawGlyphRun(System.Single,System.Single,Win32.DWrite.MeasuringMode,Win32.DWrite.GlyphRun@,Win32.DWrite.IDWriteRenderingParams,System.UInt32)">
+            <summary>
+            Draws a run of glyphs to the bitmap.
+            </summary>
+            <param name="baselineOriginX">Horizontal position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</param>
+            <param name="baselineOriginY">Vertical position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</param>
+            <param name="measuringMode">Specifies measuring mode for glyphs in the run.
+            Renderer implementations may choose different rendering modes for different measuring modes, for example
+            DWRITE_RENDERING_MODE_CLEARTYPE_NATURAL for DWRITE_MEASURING_MODE_NATURAL,
+            DWRITE_RENDERING_MODE_CLEARTYPE_GDI_CLASSIC for DWRITE_MEASURING_MODE_GDI_CLASSIC, and
+            DWRITE_RENDERING_MODE_CLEARTYPE_GDI_NATURAL for DWRITE_MEASURING_MODE_GDI_NATURAL.
+            </param>
+            <param name="glyphRun">Structure containing the properties of the glyph run.</param>
+            <param name="renderingParams">Object that controls rendering behavior.</param>
+            <param name="textColor">Specifies the foreground color of the text.</param>
+            <returns>Rectangle that receives the bounding box (in pixels not DIPs) of all the pixels affected by 
+            drawing the glyph run. The black box rectangle may extend beyond the dimensions of the bitmap.
+            </returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget1.GetMemoryDC">
+            <summary>
+            Gets a handle to the memory device context.
+            </summary>
+            <returns>The device context handle.</returns>
+            <remarks>
+            An application can use the device context to draw using GDI functions. An application can obtain the bitmap handle
+            (HBITMAP) by calling GetCurrentObject. An application that wants information about the underlying bitmap, including
+            a pointer to the pixel data, can call GetObject to fill in a DIBSECTION structure. The bitmap is always a 32-bit 
+            top-down DIB.
+            </remarks>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget1.GetPixelsPerDip">
+            <summary>
+            Gets the number of bitmap pixels per DIP. A DIP (device-independent pixel) is 1/96 inch so this value is the number
+            if pixels per inch divided by 96.
+            </summary>
+            <returns>The number of bitmap pixels per DIP.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget1.SetPixelsPerDip(System.Single)">
+            <summary>
+            Sets the number of bitmap pixels per DIP. A DIP (device-independent pixel) is 1/96 inch so this value is the number
+            if pixels per inch divided by 96.
+            </summary>
+            <param name="pixelsPerDip">Specifies the number of pixels per DIP.</param>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget1.GetCurrentTransform">
+            <summary>
+            Gets the transform that maps abstract coordinate to DIPs. By default this is the identity 
+            transform. Note that this is unrelated to the world transform of the underlying device
+            context.
+            </summary>
+            <returns>The transform.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget1.SetCurrentTransform(Win32.DWrite.Matrix@)">
+            <summary>
+            Sets the transform that maps abstract coordinate to DIPs. This does not affect the world
+            transform of the underlying device context.
+            </summary>
+            <param name="transform">Specifies the new transform. This parameter can be NULL, in which
+            case the identity transform is implied.</param>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget1.GetSize">
+            <summary>
+            Gets the dimensions of the bitmap.
+            </summary>
+            <returns>The size of the bitmap in pixels.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget1.Resize(System.Int32,System.Int32)">
+            <summary>
+            Resizes the bitmap.
+            </summary>
+            <param name="width">New bitmap width, in pixels.</param>
+            <param name="height">New bitmap height, in pixels.</param>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget1.GetTextAntialiasMode">
+            <summary>
+            Gets the current text antialiasing mode of the bitmap render target.
+            </summary>
+            <returns>The antialiasing mode.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget1.SetTextAntialiasMode(Win32.DWrite.TextAntialiasMode)">
+            <summary>
+            Sets the current text antialiasing mode of the bitmap render target.
+            </summary>
+            <param name="mode">The antialiasing mode.</param>
+            <remarks>
+            The antialiasing mode of a newly-created bitmap render target defaults to 
+            DWRITE_TEXT_ANTIALIAS_MODE_CLEARTYPE. An application can change the antialiasing
+            mode by calling SetTextAntialiasMode. For example, an application might specify
+            grayscale antialiasing when rendering text onto a transparent bitmap.
+            </remarks>
+        </member>
+        <member name="T:Win32.DWrite.IDWriteFontFile">
+            <summary>
+            The interface that represents a reference to a font file.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFontFile.PlaceHolder_GetReferenceKey">
+            <summary>
+            This method obtains the pointer to the reference key of a font file. The pointer is only valid until the object that refers to it is released.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFontFile.PlaceHolder_GetLoader">
+            <summary>
+            Obtains the file loader associated with a font file object.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFontFile.Analyze(System.Boolean@,Win32.DWrite.FontFileType@,Win32.DWrite.FontFaceType@,System.UInt32@)">
+            <summary>
+            Analyzes a file and returns whether it represents a font, and whether the font type is supported by the font system.
+            </summary>
+            <param name="isSupportedFontType">TRUE if the font type is supported by the font system, FALSE otherwise.</param>
+            <param name="fontFileType">The type of the font file. Note that even if isSupportedFontType is FALSE,
+            the fontFileType value may be different from DWRITE_FONT_FILE_TYPE_UNKNOWN.</param>
+            <param name="fontFaceType">The type of the font face that can be constructed from the font file.
+            Note that even if isSupportedFontType is FALSE, the fontFaceType value may be different from
+            DWRITE_FONT_FACE_TYPE_UNKNOWN.</param>
+            <param name="numberOfFaces">Number of font faces contained in the font file.</param>
+            <remarks>
+            IMPORTANT: certain font file types are recognized, but not supported by the font system.
+            For example, the font system will recognize a file as a Type 1 font file,
+            but will not be able to construct a font face object from it. In such situations, Analyze will set
+            isSupportedFontType output parameter to FALSE.
+            </remarks>
+        </member>
+        <member name="T:Win32.DWrite.IDWriteBitmapRenderTarget">
+            <summary>
+            Encapsulates a 32-bit device independent bitmap and device context, which can be used for rendering glyphs.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget.DrawGlyphRun(System.Single,System.Single,Win32.DWrite.MeasuringMode,Win32.DWrite.GlyphRun@,Win32.DWrite.IDWriteRenderingParams,System.UInt32)">
+            <summary>
+            Draws a run of glyphs to the bitmap.
+            </summary>
+            <param name="baselineOriginX">Horizontal position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</param>
+            <param name="baselineOriginY">Vertical position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</param>
+            <param name="measuringMode">Specifies measuring mode for glyphs in the run.
+            Renderer implementations may choose different rendering modes for different measuring modes, for example
+            DWRITE_RENDERING_MODE_CLEARTYPE_NATURAL for DWRITE_MEASURING_MODE_NATURAL,
+            DWRITE_RENDERING_MODE_CLEARTYPE_GDI_CLASSIC for DWRITE_MEASURING_MODE_GDI_CLASSIC, and
+            DWRITE_RENDERING_MODE_CLEARTYPE_GDI_NATURAL for DWRITE_MEASURING_MODE_GDI_NATURAL.
+            </param>
+            <param name="glyphRun">Structure containing the properties of the glyph run.</param>
+            <param name="renderingParams">Object that controls rendering behavior.</param>
+            <param name="textColor">Specifies the foreground color of the text.</param>
+            <returns>Rectangle that receives the bounding box (in pixels not DIPs) of all the pixels affected by 
+            drawing the glyph run. The black box rectangle may extend beyond the dimensions of the bitmap.
+            </returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget.GetMemoryDC">
+            <summary>
+            Gets a handle to the memory device context.
+            </summary>
+            <returns>The device context handle.</returns>
+            <remarks>
+            An application can use the device context to draw using GDI functions. An application can obtain the bitmap handle
+            (HBITMAP) by calling GetCurrentObject. An application that wants information about the underlying bitmap, including
+            a pointer to the pixel data, can call GetObject to fill in a DIBSECTION structure. The bitmap is always a 32-bit 
+            top-down DIB.
+            </remarks>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget.GetPixelsPerDip">
+            <summary>
+            Gets the number of bitmap pixels per DIP. A DIP (device-independent pixel) is 1/96 inch so this value is the number
+            if pixels per inch divided by 96.
+            </summary>
+            <returns>The number of bitmap pixels per DIP.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget.SetPixelsPerDip(System.Single)">
+            <summary>
+            Sets the number of bitmap pixels per DIP. A DIP (device-independent pixel) is 1/96 inch so this value is the number
+            if pixels per inch divided by 96.
+            </summary>
+            <param name="pixelsPerDip">Specifies the number of pixels per DIP.</param>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget.GetCurrentTransform">
+            <summary>
+            Gets the transform that maps abstract coordinate to DIPs. By default this is the identity 
+            transform. Note that this is unrelated to the world transform of the underlying device
+            context.
+            </summary>
+            <returns>The transform.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget.SetCurrentTransform(Win32.DWrite.Matrix@)">
+            <summary>
+            Sets the transform that maps abstract coordinate to DIPs. This does not affect the world
+            transform of the underlying device context.
+            </summary>
+            <param name="transform">Specifies the new transform. This parameter can be NULL, in which
+            case the identity transform is implied.</param>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget.GetSize">
+            <summary>
+            Gets the dimensions of the bitmap.
+            </summary>
+            <returns>The size of the bitmap in pixels.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteBitmapRenderTarget.Resize(System.Int32,System.Int32)">
+            <summary>
+            Resizes the bitmap.
+            </summary>
+            <param name="width">New bitmap width, in pixels.</param>
+            <param name="height">New bitmap height, in pixels.</param>
+        </member>
+        <member name="T:Win32.DWrite.IDWriteFactory">
+            <summary>
+            The root factory interface for all DWrite objects.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_GetSystemFontCollection">
+            <summary>
+            Gets a font collection representing the set of installed fonts.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_CreateCustomFontCollection">
+            <summary>
+            Creates a font collection using a custom font collection loader.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_RegisterFontCollectionLoader">
+            <summary>
+            Registers a custom font collection loader with the factory object.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_UnregisterFontCollectionLoader">
+            <summary>
+            Unregisters a custom font collection loader that was previously registered using RegisterFontCollectionLoader.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.CreateFontFileReference(System.String,System.IntPtr)">
+            <summary>
+            CreateFontFileReference creates a font file reference object from a local font file.
+            </summary>
+            <param name="filePath">Absolute file path. Subsequent operations on the constructed object may fail
+            if the user provided filePath doesn't correspond to a valid file on the disk.</param>
+            <param name="lastWriteTime">Last modified time of the input file path. If the parameter is omitted,
+            the function will access the font file to obtain its last write time, so the clients are encouraged to specify this value
+            to avoid extra disk access. Subsequent operations on the constructed object may fail
+            if the user provided lastWriteTime doesn't match the file on the disk.</param>
+            <returns>Newly created font file reference object, or NULL in case of failure.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_CreateCustomFontFileReference">
+            <summary>
+            CreateCustomFontFileReference creates a reference to an application specific font file resource.
+            This function enables an application or a document to use a font without having to install it on the system.
+            The fontFileReferenceKey has to be unique only in the scope of the fontFileLoader used in this call.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.CreateFontFace(Win32.DWrite.FontFaceType,System.Int32,Win32.DWrite.IDWriteFontFile[],System.Int32,Win32.DWrite.FontSimulations)">
+            <summary>
+            Creates a font face object.
+            </summary>
+            <param name="fontFaceType">The file format of the font face.</param>
+            <param name="numberOfFiles">The number of font files required to represent the font face.</param>
+            <param name="fontFiles">Font files representing the font face. Since IDWriteFontFace maintains its own references
+            to the input font file objects, it's OK to release them after this call.</param>
+            <param name="faceIndex">The zero based index of a font face in cases when the font files contain a collection of font faces.
+            If the font files contain a single face, this value should be zero.</param>
+            <param name="fontFaceSimulationFlags">Font face simulation flags for algorithmic emboldening and italicization.</param>
+            <returns>Contains the newly created font face object, or NULL in case of failure.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.CreateRenderingParams">
+            <summary>
+            Creates a rendering parameters object with default settings for the primary monitor.
+            </summary>
+            <returns>The newly created rendering parameters object, or NULL in case of failure.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.CreateMonitorRenderingParams(System.IntPtr)">
+            <summary>
+            Creates a rendering parameters object with default settings for the specified monitor.
+            </summary>
+            <param name="monitor">The monitor to read the default values from.</param>
+            <returns>The newly created rendering parameters object, or NULL in case of failure.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.CreateCustomRenderingParams(System.Single,System.Single,System.Single,Win32.DWrite.PixelGeometry,Win32.DWrite.RenderingMode)">
+            <summary>
+            Creates a rendering parameters object with the specified properties.
+            </summary>
+            <param name="gamma">The gamma value used for gamma correction, which must be greater than zero and cannot exceed 256.</param>
+            <param name="enhancedContrast">The amount of contrast enhancement, zero or greater.</param>
+            <param name="clearTypeLevel">The degree of ClearType level, from 0.0f (no ClearType) to 1.0f (full ClearType).</param>
+            <param name="pixelGeometry">The geometry of a device pixel.</param>
+            <param name="renderingMode">Method of rendering glyphs. In most cases, this should be DWRITE_RENDERING_MODE_DEFAULT to automatically use an appropriate mode.</param>
+            <returns>The newly created rendering parameters object, or NULL in case of failure.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_RegisterFontFileLoader">
+            <summary>
+            Registers a font file loader with DirectWrite.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_UnregisterFontFileLoader">
+            <summary>
+            Unregisters a font file loader that was previously registered with the DirectWrite font system using RegisterFontFileLoader.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_CreateTextFormat">
+            <summary>
+            Create a text format object used for text layout.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_CreateTypography">
+            <summary>
+            Create a typography object used in conjunction with text format for text layout.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.GetGdiInterop">
+            <summary>
+            Create an object used for interoperability with GDI.
+            </summary>
+            <returns>The GDI interop object if successful, or NULL in case of failure.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_CreateTextLayout">
+            <summary>
+            CreateTextLayout takes a string, format, and associated constraints
+            and produces an object representing the fully analyzed
+            and formatted result.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_CreateGdiCompatibleTextLayout">
+            <summary>
+            CreateGdiCompatibleTextLayout takes a string, format, and associated constraints
+            and produces and object representing the result formatted for a particular display resolution
+            and measuring mode. The resulting text layout should only be used for the intended resolution,
+            and for cases where text scalability is desired, CreateTextLayout should be used instead.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_CreateEllipsisTrimmingSign">
+            <summary>
+            The application may call this function to create an inline object for trimming, using an ellipsis as the omission sign.
+            The ellipsis will be created using the current settings of the format, including base font, style, and any effects.
+            Alternate omission signs can be created by the application by implementing IDWriteInlineObject.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_CreateTextAnalyzer">
+            <summary>
+            Return an interface to perform text analysis with.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_CreateNumberSubstitution">
+            <summary>
+            Creates a number substitution object using a locale name,
+            substitution method, and whether to ignore user overrides (uses NLS
+            defaults for the given culture instead).
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFactory.PlaceHolder_CreateGlyphRunAnalysis">
+            <summary>
+            Creates a glyph run analysis object, which encapsulates information
+            used to render a glyph run.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Win32.DWrite.IDWriteFont">
+            <summary>
+            The IDWriteFont interface represents a physical font in a font collection.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFont.PlaceHolder_GetFontFamily">
+            <summary>
+            Gets the font family to which the specified font belongs.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFont.PlaceHolder_GetWeight">
+            <summary>
+            Gets the weight of the specified font.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFont.PlaceHolder_GetStretch">
+            <summary>
+            Gets the stretch (aka. width) of the specified font.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFont.PlaceHolder_GetStyle">
+            <summary>
+            Gets the style (aka. slope) of the specified font.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFont.IsSymbolFont">
+            <summary>
+            Returns TRUE if the font is a symbol font or FALSE if not.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFont.PlaceHolder_GetFaceNames">
+            <summary>
+            Gets a localized strings collection containing the face names for the font (e.g., Regular or Bold), indexed by locale name.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFont.PlaceHolder_GetInformationalStrings">
+            <summary>
+            Gets a localized strings collection containing the specified informational strings, indexed by locale name.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFont.PlaceHolder_GetSimulations">
+            <summary>
+            Gets a value that indicates what simulation are applied to the specified font.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFont.PlaceHolder_GetMetrics">
+            <summary>
+            Gets the metrics for the font.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFont.HasCharacter(System.UInt32)">
+            <summary>
+            Determines whether the font supports the specified character.
+            </summary>
+            <param name="unicodeValue">Unicode (UCS-4) character value.</param>
+            <returns>TRUE if the font supports the specified character or FALSE if not.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteFont.CreateFontFace">
+            <summary>
+            Creates a font face object for the font.
+            </summary>
+            <returns>The newly created font face object.</returns>
+        </member>
+        <member name="T:Win32.DWrite.IDWriteFontFace">
+            <summary>
+            The interface that represents an absolute reference to a font face.
+            It contains font face type, appropriate file references and face identification data.
+            Various font data such as metrics, names and glyph outlines is obtained from IDWriteFontFace.
+            </summary>
+        </member>
+        <member name="T:Win32.DWrite.IDWriteGdiInterop">
+            <summary>
+            The GDI interop interface provides interoperability with GDI.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteGdiInterop.CreateFontFromLOGFONT(Win32.Gdi32.LogFont@)">
+            <summary>
+            Creates a font object that matches the properties specified by the LOGFONT structure.
+            </summary>
+            <param name="logFont">Structure containing a GDI-compatible font description.</param>
+            <returns>A newly created font object if successful, or NULL in case of error.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteGdiInterop.PlaceHolder_ConvertFontToLOGFONT">
+            <summary>
+            Initializes a LOGFONT structure based on the GDI-compatible properties of the specified font.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteGdiInterop.ConvertFontFaceToLOGFONT(Win32.DWrite.IDWriteFontFace)">
+            <summary>
+            Initializes a LOGFONT structure based on the GDI-compatible properties of the specified font.
+            </summary>
+            <param name="font">Specifies a font face.</param>
+            <returns>Structure that receives a GDI-compatible font description.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteGdiInterop.CreateFontFaceFromHdc(System.IntPtr)">
+            <summary>
+            Creates a font face object that corresponds to the currently selected HFONT.
+            </summary>
+            <param name="hDC">Handle to a device context into which a font has been selected. It is assumed that the client
+            has already performed font mapping and that the font selected into the DC is the actual font that would be used 
+            for rendering glyphs.</param>
+            <returns>The newly created font face object, or NULL in case of failure.</returns>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteGdiInterop.CreateBitmapRenderTarget(System.IntPtr,System.UInt32,System.UInt32)">
+            <summary>
+            Creates an object that encapsulates a bitmap and memory DC which can be used for rendering glyphs.
+            </summary>
+            <param name="hDC">Optional device context used to create a compatible memory DC.</param>
+            <param name="width">Width of the bitmap.</param>
+            <param name="height">Height of the bitmap.</param>
+            <returns>The newly created render target.</returns>
+        </member>
+        <member name="T:Win32.DWrite.IDWriteRenderingParams">
+            <summary>
+            The interface that represents text rendering settings for glyph rasterization and filtering.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteRenderingParams.GetGamma">
+            <summary>
+            Gets the gamma value used for gamma correction. Valid values must be
+            greater than zero and cannot exceed 256.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteRenderingParams.GetEnhancedContrast">
+            <summary>
+            Gets the amount of contrast enhancement. Valid values are greater than
+            or equal to zero.
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteRenderingParams.GetClearTypeLevel">
+            <summary>
+            Gets the ClearType level. Valid values range from 0.0f (no ClearType) 
+            to 1.0f (full ClearType).
+            </summary>
+        </member>
+        <member name="M:Win32.DWrite.IDWriteRenderingParams.GetRenderingMode">
+            <summary>
+            Gets the rendering mode.
+            </summary>
+        </member>
+        <member name="T:Win32.DWrite.Matrix">
+            <summary>
+            The DWRITE_MATRIX structure specifies the graphics transform to be applied
+            to rendered glyphs.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.Matrix.M11">
+            <summary>
+            Horizontal scaling / cosine of rotation
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.Matrix.M12">
+            <summary>
+            Vertical shear / sine of rotation
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.Matrix.M21">
+            <summary>
+            Horizontal shear / negative sine of rotation
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.Matrix.M22">
+            <summary>
+            Vertical scaling / cosine of rotation
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.Matrix.OffsetX">
+            <summary>
+            Horizontal shift (always orthogonal regardless of rotation)
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.Matrix.OffsetY">
+            <summary>
+            Vertical shift (always orthogonal regardless of rotation)
+            </summary>
+        </member>
+        <member name="T:Win32.DWrite.GlyphOffset">
+            <summary>
+            Optional adjustment to a glyph's position. A glyph offset changes the position of a glyph without affecting
+            the pen position. Offsets are in logical, pre-transform units.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.GlyphOffset.AdvanceOffset">
+            <summary>
+            Offset in the advance direction of the run. A positive advance offset moves the glyph to the right
+            (in pre-transform coordinates) if the run is left-to-right or to the left if the run is right-to-left.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.GlyphOffset.AscenderOffset">
+            <summary>
+            Offset in the ascent direction, i.e., the direction ascenders point. A positive ascender offset moves
+            the glyph up (in pre-transform coordinates).
+            </summary>
+        </member>
+        <member name="T:Win32.DWrite.GlyphRun">
+            <summary>
+            The DWRITE_GLYPH_RUN structure contains the information needed by renderers
+            to draw glyph runs. All coordinates are in device independent pixels (DIPs).
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.GlyphRun.FontFace">
+            <summary>
+            The physical font face to draw with.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.GlyphRun.EmSize">
+            <summary>
+            Logical size of the font in DIPs, not points (equals 1/96 inch).
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.GlyphRun.GlyphCount">
+            <summary>
+            The number of glyphs.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.GlyphRun.GlyphIndices">
+            <summary>
+            The indices to render.
+            </summary>    
+        </member>
+        <member name="F:Win32.DWrite.GlyphRun.GlyphAdvances">
+            <summary>
+            Glyph advance widths.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.GlyphRun.GlyphOffsets">
+            <summary>
+            Glyph offsets.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.GlyphRun.IsSideways">
+            <summary>
+            If true, specifies that glyphs are rotated 90 degrees to the left and
+            vertical metrics are used. Vertical writing is achieved by specifying
+            isSideways = true and rotating the entire run 90 degrees to the right
+            via a rotate transform.
+            </summary>
+        </member>
+        <member name="F:Win32.DWrite.GlyphRun.BidiLevel">
+            <summary>
+            The implicit resolved bidi level of the run. Odd levels indicate
+            right-to-left languages like Hebrew and Arabic, while even levels
+            indicate left-to-right languages like English and Japanese (when
+            written horizontally). For right-to-left languages, the text origin
+            is on the right, and text should be drawn to the left.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.IOpenTypeCompiler">
+            <summary>
+            OpenType Compiler.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.IOpenTypeCompiler.IsSubstitutionFeaturePresent(System.Windows.Media.GlyphTypeface,System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+            Checks if substitution feature is present in glyph <paramref name="typeface"/>.
+            </summary>
+            <param name="typeface">Glyph typeface in which look for feature.</param>
+            <param name="scriptId">ID of script in which look for feature.</param>
+            <param name="languageId">ID of language in which look for feature.</param>
+            <param name="featureId">ID of feature to look up.</param>
+            <returns>True if feature is present.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.IOpenTypeCompiler.IsPositioningFeaturePresent(System.Windows.Media.GlyphTypeface,System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+            Checks if positioning feature is present in glyph <paramref name="typeface"/>.
+            </summary>
+            <param name="typeface">Glyph typeface in which look for feature.</param>
+            <param name="scriptId">ID of script in which look for feature.</param>
+            <param name="languageId">ID of language in which look feature up.</param>
+            <param name="featureId">ID of feature to look up.</param>
+            <returns>True if feature is present.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.IOpenTypeCompiler.CompileFeature(System.Windows.Media.GlyphTypeface,System.UInt32,System.UInt32,System.UInt32,Terka.TinyFonts.SubstitutionAppendix,Terka.TinyFonts.GlyphClassesAppendix,System.Collections.Generic.IEnumerable{System.UInt16})">
+            <summary>
+            Compiles state machine for substitution feature and saves state machine to <paramref name="substitution"/> appendix.
+            </summary>
+            <param name="typeface">Glyph typeface in which look for feature.</param>
+            <param name="script">ID of script in which look for feature.</param>
+            <param name="language">ID of language in which look for feature.</param>
+            <param name="feature">ID of feature to look up.</param>
+            <param name="substitution">Substitution appendix in which will be compiled state machine stored.</param>
+            <param name="glyphClasses">Glyph classes appendix for use by substitution appendix.</param>
+            <param name="availableGlyphs">Which glyphs should be restricted in state machine.</param>
+            <returns>All used glyphs during compilation. Can add additional glyphs to availableGlyphs.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.IOpenTypeCompiler.CompileFeature(System.Windows.Media.GlyphTypeface,System.UInt32,System.UInt32,System.UInt32,Terka.TinyFonts.PositioningAppendix,Terka.TinyFonts.GlyphClassesAppendix,System.Collections.Generic.IEnumerable{System.UInt16},System.Double)">
+            <summary>
+            Compiles state machine for positioning feature and saves state machine to <paramref name="positioning"/> appendix.
+            </summary>
+            <param name="typeface">Glyph typeface in which look for feature.</param>
+            <param name="script">ID of script in which look for feature.</param>
+            <param name="language">ID of language in which look for feature.</param>
+            <param name="feature">ID of feature to look up.</param>
+            <param name="positioning">Positioning appendix in which will be compiled state machine stored.</param>
+            <param name="glyphClasses">Glyph classes appendix for use by positioning appendix.</param>
+            <param name="availableGlyphs">Which glyphs should be restricted in state machine.</param>
+            <param name="emSize">Requested em size.</param>
+            <returns>All used glyphs during compilation. Can add additional glyphs to availableGlyphs.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.IOpenTypeCompiler.GetGeneratedGlyphIds(System.Windows.Media.GlyphTypeface,System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+            Gets generated glyphs during compilation of state machine.
+            </summary>
+            <param name="typeface">Glyph typeface in which look for feature.</param>
+            <param name="scriptId">ID of script in which look for feature.</param>
+            <param name="languageId">ID of language in which look for feature.</param>
+            <param name="featureId">ID of feature to look up.</param>
+            <returns>All used glyphs during compilation.</returns>
+        </member>
+        <member name="T:Terka.TinyBitmaps.BitmapDescription">
+            <summary>
+            Bitmap Description.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyBitmaps.BitmapDescription.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+        </member>
+        <member name="M:Terka.TinyBitmaps.BitmapDescription.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+        </member>
+        <member name="P:Terka.TinyBitmaps.BitmapDescription.Width">
+            <summary>
+            Gets or sets width in pixel units.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyBitmaps.BitmapDescription.Height">
+            <summary>
+            Gets or sets height in pixel units.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyBitmaps.BitmapDescription.Flags">
+            <summary>
+            Gets or sets various flags of the bitmap.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyBitmaps.BitmapDescription.BitsPerPixel">
+            <summary>
+            Gets or sets bits per pixel.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyBitmaps.BitmapDescription.Type">
+            <summary>
+            Gets or sets format of the bitmap data.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyBitmaps.BitmapDescription.IsCompressed">
+            <summary>
+            Gets or sets compressed flag.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyBitmaps.BitmapDescriptionFlags">
+            <summary>
+            The individual flags for bitmap description.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyBitmaps.BitmapDescriptionFlags.None">
+            <summary>
+            No flags.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyBitmaps.BitmapDescriptionFlags.ReadOnly">
+            <summary>
+            Read only.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyBitmaps.BitmapDescriptionFlags.Compressed">
+            <summary>
+            Compressed.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyBitmaps.BitmapType">
+            <summary>
+            Known types of bitmap formats.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyBitmaps.BitmapType.TinyCLR">
+            <summary>
+            Tiny CLR Bitmap.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyBitmaps.BitmapType.Gif">
+            <summary>
+            GIF.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyBitmaps.BitmapType.Jpeg">
+            <summary>
+            JPEG.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyBitmaps.BitmapType.WindowsBmp">
+            <summary>
+            Windows Bitmap.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.GlyphClassesAppendix">
+            <summary>
+            Font appendix for glyph classes.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphClassesAppendix.GetSize(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Gets size of this appendix.
+            </summary>
+            <param name="font">Tiny Font containing this appendix.</param>
+            <returns>Size in bytes.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphClassesAppendix.#ctor">
+            <summary>
+            Creates new instance of appendix.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphClassesAppendix.ReadFrom(System.IO.BinaryReader,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <param name="font">Tiny Font containing this appendix.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphClassesAppendix.WriteTo(System.IO.BinaryWriter,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <param name="font">Tiny Font containing this appendix.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphClassesAppendix.Update(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+            <param name="font">Tiny Font containing this appendix.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphClassesAppendix.FindCoverage(System.Int32[])">
+            <summary>
+            Finds an existing coverage for given sequence of glyphs.
+            </summary>
+            <param name="glyphs">The sequnce of glyphs to look for.</param>
+            <returns>An existing <see cref="T:Terka.TinyFonts.GlyphClassesAppendix.Coverage"/> containing <paramref name="glyphs"/> or null if no such coverage exists.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphClassesAppendix.AppendCoverage(System.Int32[])">
+            <summary>
+            Append new glyph <see cref="T:Terka.TinyFonts.GlyphClassesAppendix.Coverage"/> to this appendix.
+            </summary>
+            <param name="glyphs">The sequnce of glyphs for coverage.</param>
+            <returns>Created <see cref="T:Terka.TinyFonts.GlyphClassesAppendix.Coverage"/>.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphClassesAppendix.HasContent">
+            <summary>
+            Gets if appendix has any valid content.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphClassesAppendix.CoverageCount">
+            <summary>
+            Gets or sets count of coverages in this appendix.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphClassesAppendix.CoverageGlyphCount">
+            <summary>
+            Gets or sets total count of glyphs accros all coverages in this appendix.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphClassesAppendix.Coverages">
+            <summary>
+            Gets coverages collection.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphClassesAppendix.CoverageGlyphs">
+            <summary>
+            Gets coverage glyphs collection.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.GlyphClassesAppendix.Coverage">
+            <summary>
+            Coverage information.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphClassesAppendix.Coverage.#ctor">
+            <summary>
+            Creates new coverage.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphClassesAppendix.Coverage.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphClassesAppendix.Coverage.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.GlyphClassesAppendix.Coverage.GetGlyphs(Terka.TinyFonts.GlyphClassesAppendix)">
+            <summary>
+            Gets glyphs within this coverage.
+            </summary>
+            <param name="appendix"><see cref="T:Terka.TinyFonts.GlyphClassesAppendix"/> containing this coverage.</param>
+            <returns>Glyph's ID.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphClassesAppendix.Coverage.Offset">
+            <summary>
+            Gets or sets zero-based offset to <see cref="P:Terka.TinyFonts.GlyphClassesAppendix.CoverageGlyphs"/> in <see cref="T:Terka.TinyFonts.GlyphClassesAppendix"/>.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.GlyphClassesAppendix.Coverage.Count">
+            <summary>
+            Gets or sets how many glyphs are assigned to this coverage.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.UnicodePlanesAppendix">
+            <summary>
+            Appendix contaning extended Unicode planes.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.UnicodePlanesAppendix.GetSize(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Gets total size in bytes of this appendix.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.UnicodePlanesAppendix.#ctor">
+            <summary>
+            Creates new instance of this appendix.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.UnicodePlanesAppendix.SetPlane(System.Int32,Terka.TinyFonts.FontPlane)">
+            <summary>
+            Sets Font Plane data for specified plane <paramref name="number"/>.
+            If plane does not exists yet, it will be appended otherwise existing updated.
+            It also update bit mask.
+            </summary>
+            <param name="number">Plane number.</param>
+            <param name="plane">Font Plane data.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.UnicodePlanesAppendix.IndexOfPlane(System.Int32)">
+            <summary>
+            Returns zero-based index to list of font planes <see cref="P:Terka.TinyFonts.UnicodePlanesAppendix.Planes"/> to specified plane <paramref name="number"/>.
+            </summary>
+            <param name="number">Plane number.</param>
+            <returns>Zero-based index.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.UnicodePlanesAppendix.GetPlane(System.Int32)">
+            <summary>
+            Gets font plane by its plane <paramref name="number"/>.
+            </summary>
+            <param name="number">Plane number</param>
+            <returns>Font Plane or null if plane with specified number does not exists.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.UnicodePlanesAppendix.ReadFrom(System.IO.BinaryReader,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <param name="font">Tiny Font containing this appendix.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="font"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.UnicodePlanesAppendix.WriteTo(System.IO.BinaryWriter,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <param name="font">Tiny Font containing this appendix.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="font"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.UnicodePlanesAppendix.Update(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+            <param name="font">Tiny Font containing this appendix.</param>
+        </member>
+        <member name="P:Terka.TinyFonts.UnicodePlanesAppendix.Mask">
+            <summary>
+            Gets bit mask representing which font planes are present in this appendix.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.UnicodePlanesAppendix.Planes">
+            <summary>
+            Gets list of planes in this appendix.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.UnicodePlanesAppendix.HasContent">
+            <summary>
+            Gets if this appendix has any valid content.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.CharacterInfo">
+            <summary>
+            A helper class that groups data about a single character in <see cref="T:Terka.TinyFonts.TinyFont"/>.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterInfo.#ctor(Terka.TinyFonts.TinyFont,System.Int32,System.Char,Terka.TinyFonts.FontPlane,System.Int32)">
+            <summary>
+            Creates new instance of Character Info.
+            </summary>
+            <param name="font">Tiny Font containing character.</param>
+            <param name="rangeIndex">Index to character range containing this character.</param>
+            <param name="c">Characeter.</param>
+            <param name="plane">Font plane describing plane to which this character belongs.</param>
+            <param name="planeNumber">Number of <paramref name="plane"/> containg this character.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterInfo.GetPixel(System.Int32,System.Int32)">
+            <summary>
+            Returns if on specified position is any visible pixel of character. If true, pixel is visible.
+            </summary>
+            <param name="x">x position.</param>
+            <param name="y">y position.</param>
+            <returns>If true pixel is visible.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterInfo.GetAntialias(System.Int32,System.Int32)">
+            <summary>
+            Returns intensity of character's anti-aliasing on specified position.
+            </summary>
+            <param name="x">x position.</param>
+            <param name="y">y position.</param>
+            <returns>Anti-aliasing intensity.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.Font">
+            <summary>
+            Gets Tiny Font which contains this character.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.CharacterRange">
+            <summary>
+            Gets range of characters in which this character belongs.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.Character">
+            <summary>
+            Gets <see cref="T:Terka.TinyFonts.CharacterDescription"/> metrics.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.CharacterValue">
+            <summary>
+            Gets character.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.CharacterRangeIndex">
+            <summary>
+            Gets index to character range containing this character.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.CharacterIndex">
+            <summary>
+            Gets character index widthin its plane.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.CharacterBitmapData">
+            <summary>
+            Gets raw character bitmap data.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.CharacterAntialiasingData">
+            <summary>
+            Gets raw character anti-aliasing data.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.PlaneNumber">
+            <summary>
+            Gets number of plane to which this character belongs.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.Codepoint">
+            <summary>
+            Gets full character code.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.MarginLeft">
+            <summary>
+            Gets or sets character's left margin.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.MarginRight">
+            <summary>
+            Gets or sets character's right margin.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.InnerWidth">
+            <summary>
+            Gets or sets character's inner width.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.Width">
+            <summary>
+            Gets or sets character's width in bitmap.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.Height">
+            <summary>
+            Gets or sets character's height in bitmap.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.Offset">
+            <summary>
+            Gets offset to character's position in <see cref="P:Terka.TinyFonts.CharacterInfo.CharacterBitmapData"/>.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterInfo.AntialiasOffset">
+            <summary>
+            Gets offset to character's position in <see cref="P:Terka.TinyFonts.CharacterInfo.CharacterAntialiasingData"/>.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.AntialiasingMetrics">
+            <summary>
+            Anti-aliasing metrics.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.AntialiasingMetrics.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.AntialiasingMetrics.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="P:Terka.TinyFonts.AntialiasingMetrics.Size">
+            <summary>
+            Gets or sets number of bytes of the anti-aliasing data included.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.CharacterDescription">
+            <summary>
+            Character metrics.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterDescription.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterDescription.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterDescription.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterDescription.Offset">
+            <summary>
+            Gets or sets the horizontal offset into the bitmap for this character.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterDescription.LeftMargin">
+            <summary>
+            Gets or sets left margin for this character.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterDescription.RightMargin">
+            <summary>
+            Gets or sets right margin for this character.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.CharacterRangeDescription">
+            <summary>
+            The range represents a sequence of all Unicode characters starting at first character up to last character inclusive. For each range, last character-first character+1 character fields will be included. 
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterRangeDescription.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterRangeDescription.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterRangeDescription.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterRangeDescription.IndexOfFirstCharacter">
+            <summary>
+            Gets or sets zero based index of first character.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterRangeDescription.FirstCharacter">
+            <summary>
+            Gets or sets Unicode code point of the first character in the range.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterRangeDescription.LastCharacter">
+            <summary>
+            Gets or sets Unicode code point of the last character in the range.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterRangeDescription.Offset">
+            <summary>
+            Gets or sets the horizontal offset into the bitmap for this range.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.CharacterRangeAntialiasing">
+            <summary>
+            Character range anti-aliasing offset.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterRangeAntialiasing.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterRangeAntialiasing.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterRangeAntialiasing.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterRangeAntialiasing.Offset">
+            <summary>
+            Gets the offset into the anti-aliasing data in range (in bytes).
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.CharacterAntialiasing">
+            <summary>
+            Character anti-aliasing offset.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.CharacterAntialiasing.NoData">
+            <summary>
+            Constant for no antialiasing data.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterAntialiasing.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterAntialiasing.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.CharacterAntialiasing.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.CharacterAntialiasing.Offset">
+            <summary>
+            The offset into the anti-aliasing data for this character (in bytes).
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.FontDescriptionFlags">
+            <summary>
+            Flags describing the font.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontDescriptionFlags.None">
+            <summary>
+            No special properties of font file.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontDescriptionFlags.Bold">
+            <summary>
+            The font is bold.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontDescriptionFlags.Italic">
+            <summary>
+            The font is italic.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontDescriptionFlags.Underlined">
+            <summary>
+            The font is underlined.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.FontDescriptionFlags.Extended">
+            <summary>
+            The Tiny Font contains the extended structure.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.FontDescription">
+            <summary>
+            Contains basic information TinyFont.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.FontDescription.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.FontDescription.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="P:Terka.TinyFonts.FontDescription.Ranges">
+            <summary>
+            Gets or sets the number of continuous ranges of characters in the font.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontDescription.Characters">
+            <summary>
+            Gets ot sets total number of characters included in the font.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontDescription.Flags">
+            <summary>
+            Gets or sets various flags of the Tiny Font.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontDescription.Appendices">
+            <summary>
+            Gets of sets the number of appendices present in the Tiny Font file.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontDescription.AntialiasingLevel">
+            <summary>
+            Gets or sets the level of anti-aliasing. 
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontDescription.IsBold">
+            <summary>
+            Gets or sets if Tiny Font is bold.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontDescription.IsItalic">
+            <summary>
+            Gets or sets if Tiny Font is italic.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontDescription.IsUnderlined">
+            <summary>
+            Gets or sets if Tiny Font is underlined.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontDescription.IsExtended">
+            <summary>
+            Gets or sets if Tiny Font contains extended data (eg. antialiasing data).
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.FontMetrics">
+            <summary>
+            Metrics for Tiny Font file.
+            All the metric values are properties of the whole font.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.FontMetrics.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.FontMetrics.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.FontMetrics.Clone">
+            <summary>
+            Creates a deep copy of the font metrics.
+            </summary>
+            <returns>A new <see cref="T:Terka.TinyFonts.FontMetrics"/> instance with the same values.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.FontMetrics.Height">
+            <summary>
+            Gets or sets cell height of the font.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontMetrics.Offset">
+            <summary>
+            Gets of sets number of rows not covered by the bitmap.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontMetrics.Ascent">
+            <summary>
+            Gets or sets ascent.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontMetrics.Descent">
+            <summary>
+            Gets of sets descent.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontMetrics.InternalLeading">
+            <summary>
+            Gets or sets internal leading.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontMetrics.ExternalLeading">
+            <summary>
+            Gets or sets external leading.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontMetrics.AverageCharacterWidth">
+            <summary>
+            Gets or sets average character width.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.FontMetrics.MaximumCharacterWidth">
+            <summary>
+            Gets or sets maximum character width.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.SentinelCollection`1">
+            <summary>
+            Collection with sentinel element.
+            </summary>
+            <typeparam name="TItem"></typeparam>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.#ctor">
+            <summary>
+            Creates new instance of collection.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.#ctor(`0)">
+            <summary>
+            Creates new instance of collection with custom <paramref name="sentinel"/>.
+            </summary>
+            <param name="sentinel">Sentinel element.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0},`0)">
+            <summary>
+            Creates new instance of collection from <paramref name="items"/> with custom <paramref name="sentinel"/>.
+            </summary>
+            <param name="items">Items to add to the collection.</param>
+            <param name="sentinel">Sentinel element.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Boolean)">
+            <summary>
+            Creates new instance of collection from <paramref name="items"/> with optional sentinel as last element.
+            </summary>
+            <param name="items">Items to add to the collection.</param>
+            <param name="endsWithSentinel">If true last element of <paramref name="items"/> will be handled as sentinel element.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.Add(`0)">
+            <summary>
+            Adds new element to collection.
+            </summary>
+            <param name="item">Element to add.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Adds new items to collection.
+            </summary>
+            <param name="items">Items to add.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.Insert(System.Int32,`0)">
+            <summary>
+            Inserts item to specified position.
+            </summary>
+            <param name="index">Position index in collection.</param>
+            <param name="item">Item to add.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.Contains(`0)">
+            <summary>
+            Tests if item exists in collection.
+            </summary>
+            <param name="item">Item to test.</param>
+            <returns>True if item exists.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.IndexOf(`0)">
+            <summary>
+            Gets index of item in the collection.
+            </summary>
+            <param name="item">Item to search.</param>
+            <returns>Zero-based index.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.BinarySearch(`0)">
+            <summary>
+            Binary search of item in the collection.
+            </summary>
+            <param name="item">Item to search</param>
+            <returns>Zero-based index of item.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.BinarySearch(`0,System.Collections.Generic.IComparer{`0})">
+            <summary>
+            Binary search of item in the collection using custom comparer.
+            </summary>
+            <param name="item">Item to search</param>
+            <param name="comparer">Custom comparer.</param>
+            <returns>Zero-based index of item.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.BinarySearch(System.Object,System.Collections.IComparer)">
+            <summary>
+            Binary search of item in the collection using custom comparer.
+            </summary>
+            <param name="item">Item to search</param>
+            <param name="comparer">Custom comparer.</param>
+            <returns>Zero-based index of item.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.Sort">
+            <summary>
+            Sorts collection.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.Sort(System.Int32,System.Int32,System.Collections.Generic.IComparer{`0})">
+            <summary>
+            Sorts items in a range of items in collection using specified comparer.
+            </summary>
+            <param name="index">Starting index of range.</param>
+            <param name="count">Count of items in range.</param>
+            <param name="comparer">Custom comparer.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.Clear">
+            <summary>
+            Removes all elements from the collection.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.Remove(`0)">
+            <summary>
+            Removes the first occurence of item in the collection.
+            </summary>
+            <param name="item">Item to remove.</param>
+            <returns>True if success.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.RemoveAt(System.Int32)">
+            <summary>
+            Removes item at specified index in the collection.
+            </summary>
+            <param name="index">Index of item to remove.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            Copies entire collection to a compatible one-dimensional array starting at <paramref name="arrayIndex"/>.
+            </summary>
+            <param name="array">Array to be filled.</param>
+            <param name="arrayIndex">Starting index in array.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection with the sentinal.
+            </summary>
+            <returns>Enumerator.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection with the sentinal.
+            </summary>
+            <returns>Enumerator.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.SentinelCollection`1.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.SentinelCollection`1.Sentinel">
+            <summary>
+            Gets or sets sentinel element.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.SentinelCollection`1.Count">
+            <summary>
+            Gets count of elements in collection with sentinel.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.SentinelCollection`1.ItemsCount">
+            <summary>
+            Gets count of elements in collection without sentinel.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.SentinelCollection`1.Capacity">
+            <summary>
+            Gets or sets collection capacity.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.SentinelCollection`1.IsReadOnly">
+            <summary>
+            Gets if collection is read-only.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.SentinelCollection`1.Item(System.Int32)">
+            <summary>
+            Indexer to the collection.
+            </summary>
+            <param name="index">Items index.</param>
+            <returns>Item.</returns>
+        </member>
+        <member name="T:Terka.TinyFonts.TinyFont">
+            <summary>
+            Represents a Tiny Font.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.GetOrAddNewAppendix``1">
+            <summary>
+            Gets existing appendix and if appendix of this type does not exists yet, creates new empty one.
+            </summary>
+            <typeparam name="T">Type of requested font appendix.</typeparam>
+            <returns>Requested font appendix.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.TryGetAppendix``1(``0@)">
+            <summary>
+            Tries to get font appendix in this tiny font file.
+            </summary>
+            <typeparam name="T">Type of requested font appendix.</typeparam>
+            <param name="appendix">Found appendix or null if appendix does not exists.</param>
+            <returns>True if appendix was found.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.#ctor">
+            <summary>
+            Creates new empty instance of Tiny Font.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.#ctor(Terka.TinyResources.TinyResourcesFile.Resource)">
+            <summary>
+            Creates new instance of Tiny Font from resources.
+            </summary>
+            <param name="resource">Resource containing seralized data from tinyfnt file.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.Load(System.String)">
+            <summary>
+            Creates new instance of Tiny Font from tinyfnt file from requested path.
+            </summary>
+            <param name="path">Path to tinyfnt file.</param>
+            <returns>Corresponding Tiny Font structure.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.Load(System.IO.BinaryReader)">
+            <summary>
+            Creates new instance of Tiny Font from binary reader.
+            </summary>
+            <param name="reader">Source or serialized data.</param>
+            <returns>New instance of Tiny Font.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.Save(System.IO.Stream)">
+            <summary>
+            Saves serialized Tiny Font to stream.
+            </summary>
+            <param name="stream">Stream to save serialized data.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.Save(System.String)">
+            <summary>
+            Saves serialized Tiny Font to file.
+            </summary>
+            <param name="path">Path to file to save serialized data.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.Update">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.GetCharacterInfo(System.Int32)">
+            <summary>
+            Returns information for character specified by its code.
+            </summary>
+            <param name="c">Character code.</param>
+            <returns>Character information.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.GetCharacterInfo(System.Char)">
+            <summary>
+            Returns information for character specified by char.
+            </summary>
+            <param name="c">Character.</param>
+            <returns>Character information.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.EnumerateAllCharacterInfos">
+            <summary>
+            Enumerates thru all characters saved in Tiny Font accross all font planes sorted by font plane in ascending order.
+            </summary>
+            <returns>Character information.</returns>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.Metrics">
+            <summary>
+            Gets or sets font metrics.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.Description">
+            <summary>
+            Gets or sets font description.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.CharacterBitmap">
+            <summary>
+            Gets or sets character bitmap.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.CharacterRanges">
+            <summary>
+            Gets or sets character ranges. The sequence of character ranges is ended by a sentinel character range, which has all fields set to zero except the range offset, which is set to the bitmap’s width.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.Characters">
+            <summary>
+            Gets or sets characters of this plane. The sequence is ended by a sentinel character, which has all fields set to zero.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.CharacterBitmapData">
+            <summary>
+            Gets or sets characters raw bitmap data. 
+            The image is stored top to bottom by rows, left to right in bits from the least significant bit (LSB) to the most significant bit (MSB).
+            All included characters are stacked on a single row, side by side to the right in the order of range and character sequences.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.CharacterAntialiasingMetrics">
+            <summary>
+            Gets or sets anti-aliasing metrics for characters.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.CharacterRangesAntialiasing">
+            <summary>
+            Gets or sets character range anti-aliasing offsets.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.CharactersAntialiasing">
+            <summary>
+            Gets or sets character anti-aliasing offsets.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.CharacterAntialiasingData">
+            <summary>
+            Gets or sets the anti-aliasing data for Tiny Font.
+            Data are raw values without any alignment. The total size of anti-alias data, however, is aligned at 4 byte boundary, so the number of bytes is equal to antialias size plus eventual padding.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.Appendices">
+            <summary>
+            Gets font appendicies.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.FontPlanes">
+            <summary>
+            Gets font planes collection.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.TotalCharactersCount">
+            <summary>
+            Gets the total count of characters stored in this tiny font file.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.TinyFont.FontPlanesCollection">
+            <summary>
+            Collection of font planes in Tiny Font.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.TinyFont.FontPlanesCollection.#ctor(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Creates new instance of the collection.
+            </summary>
+            <param name="font"></param>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.FontPlanesCollection.Appendix">
+            <summary>
+            Gets Unicode planes appendix containing font planes.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyFonts.TinyFont.FontPlanesCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets Font Plane at speficied <paramref name="planeNumber"/>.
+            </summary>
+            <param name="planeNumber">Number of plane.</param>
+            <returns>Font plane or null if plane does not exists.</returns>
+        </member>
+        <member name="M:Terka.TinyFonts.UnknownAppendix.GetSize(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Gets total size of this appendix.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyFonts.UnknownAppendix.#ctor(System.Byte,System.Int32)">
+            <summary>
+            Creates new instance of unknown appendix.
+            </summary>
+            <param name="id"></param>
+            <param name="size"></param>
+        </member>
+        <member name="M:Terka.TinyFonts.UnknownAppendix.ReadFrom(System.IO.BinaryReader,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <param name="font">The <see cref="T:Terka.TinyFonts.TinyFont"/> containing this appendix.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.UnknownAppendix.WriteTo(System.IO.BinaryWriter,Terka.TinyFonts.TinyFont)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <param name="font">The <see cref="T:Terka.TinyFonts.TinyFont"/> containing this appendix.</param>
+        </member>
+        <member name="M:Terka.TinyFonts.UnknownAppendix.Update(Terka.TinyFonts.TinyFont)">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+            <param name="font">The <see cref="T:Terka.TinyFonts.TinyFont"/> containing this appendix.</param>
+        </member>
+        <member name="P:Terka.TinyFonts.UnknownAppendix.Data">
+            <summary>
+            Gets or sets raw appendix data.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyFonts.AntialiasingLevel">
+            <summary>
+            Antialiasing level for characters.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.AntialiasingLevel.None">
+            <summary>
+            No antialiasing.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.AntialiasingLevel.Gray5">
+            <summary>
+            Antialiasing with 5 shades of gray.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.AntialiasingLevel.Gray17">
+            <summary>
+            Antialiasing with 17 shades of gray.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyFonts.AntialiasingLevel.Gray65">
+            <summary>
+            Antialiasing with 65 shades of gray.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyResources.TinyResourcesFile">
+            <summary>
+            Represents a Tiny Resource file.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Terka.TinyResources.TinyResourcesFile"/>.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terka.TinyResources.TinyResourcesFile"/> from an existing file.
+            </summary>
+            <param name="path">The file to be loaded.</param>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.#ctor(System.Collections.Generic.IEnumerable{Terka.TinyResources.TinyResourcesFile.Resource})">
+            <summary>
+            Creates a new instance of the <see cref="T:Terka.TinyResources.TinyResourcesFile"/> from a collection of resources.
+            </summary>
+            <param name="resources">The collection of resources to create the file from.</param>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+            <exception cref="T:System.InvalidOperationException"><see cref="P:Terka.TinyResources.TinyResourcesFile.Header"/> is null.</exception>
+            <remarks>
+            This method does not ensure the serialized data are valid Tiny Resource.
+            Use <see cref="M:Terka.TinyResources.TinyResourcesFile.Update"/> method to ensure valid output.
+            </remarks>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.Update">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+            <exception cref="T:System.InvalidOperationException"><see cref="P:Terka.TinyResources.TinyResourcesFile.Header"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.Save(System.String)">
+            <summary>
+            Saves the Tiny Resource to a file.
+            </summary>
+            <param name="path">The file to save to.</param>
+            <remarks>
+            This method ensures the written data are valid using the <see cref="M:Terka.TinyResources.TinyResourcesFile.Update"/> method.
+            </remarks>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.Save(System.IO.Stream)">
+            <summary>
+            Saves the Tiny Resource to a stream and closes it.
+            </summary>
+            <param name="stream">The stream to save to.</param>
+            <remarks>
+            This method ensures the written data are valid using the <see cref="M:Terka.TinyResources.TinyResourcesFile.Update"/> method.
+            </remarks>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.Header">
+            <summary>
+            Gets or sets the Tiny resource file header.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is null.</exception>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.Resources">
+            <summary>
+            Gets a collection of resources in the file.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyResources.TinyResourcesFile.Resource">
+            <summary>
+            Represents a single Tiny Resource.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.Resource.#ctor">
+            <summary>
+            Creates a blank instance of <see cref="T:Terka.TinyResources.TinyResourcesFile.Resource"/>.
+            /// </summary>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.Resource.#ctor(Terka.TinyResources.TinyResourceKind,System.Byte[])">
+            <summary>
+            Creates a new instance of <see cref="T:Terka.TinyResources.TinyResourcesFile.Resource"/> with specified <see cref="T:Terka.TinyResources.TinyResourceKind"/> and existing data.
+            </summary>
+            <param name="kind"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.Resource.#ctor(Terka.TinyResources.TinyResourcesFile.ResourceHeader,System.Byte[])">
+            <summary>
+            Creates a new instance of <see cref="T:Terka.TinyResources.TinyResourcesFile.Resource"/> with existing <see cref="T:Terka.TinyResources.TinyResourcesFile.ResourceHeader"/> and data.
+            </summary>
+            <param name="header"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.Resource.ReadFrom(System.IO.BinaryReader,Terka.TinyResources.TinyResourcesFile.FileHeader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <param name="header">Optional <see cref="T:Terka.TinyResources.TinyResourcesFile.FileHeader"/> that specifies padding to skip after reading.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.Resource.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+            <exception cref="T:System.InvalidOperationException"><see cref="P:Terka.TinyResources.TinyResourcesFile.Resource.Header"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.Resource.Update">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+            <exception cref="T:System.InvalidOperationException"><see cref="P:Terka.TinyResources.TinyResourcesFile.Resource.Header"/> is null.</exception>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.Resource.Header">
+            <summary>
+            Gets or sets the resource header.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.Resource.Data">
+            <summary>
+            Gets or sets the resource data.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyResources.TinyResourcesFile.ResourceHeader">
+            <summary>
+            Tiny Resource data header.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.ResourceHeader.#ctor">
+            <summary>
+            Creates a blank instance of the <see cref="T:Terka.TinyResources.TinyResourcesFile.ResourceHeader"/> class.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.ResourceHeader.#ctor(Terka.TinyResources.TinyResourceKind)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terka.TinyResources.TinyResourcesFile.ResourceHeader"/> class with specified <see cref="T:Terka.TinyResources.TinyResourceKind"/>.
+            </summary>
+            <param name="kind">The <see cref="T:Terka.TinyResources.TinyResourceKind"/> of the resource.</param>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.ResourceHeader.#ctor(Terka.TinyResources.TinyResourceKind,System.Int16)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terka.TinyResources.TinyResourcesFile.ResourceHeader"/> class with specified <see cref="T:Terka.TinyResources.TinyResourceKind"/> and ID.
+            </summary>
+            <param name="kind">The <see cref="T:Terka.TinyResources.TinyResourceKind"/> of the resource.</param>
+            <param name="id">The ID of the resource.</param>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.ResourceHeader.ReadFrom(System.IO.BinaryReader,Terka.TinyResources.TinyResourcesFile.FileHeader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <param name="fileHeader">Optional <see cref="T:Terka.TinyResources.TinyResourcesFile.FileHeader"/> that specifies padding to skip after reading.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.ResourceHeader.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.ResourceHeader.Update">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.ResourceHeader.ID">
+            <summary>
+            Gets or sets the Tiny Resource identifier.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.ResourceHeader.Kind">
+            <summary>
+            Gets or sets the type of Tiny Resource. 
+            </summary>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.ResourceHeader.Flags">
+            <summary>
+            Gets or sets the various flags of the Tiny Resource.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.ResourceHeader.Size">
+            <summary>
+            Gets or sets the number of bytes of the Tiny Resource data.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.ResourceHeader.SizeOfPadding">
+            <summary>
+            Gets or sets the 3-bit number of bytes of the padding appended to the Tiny Resource data.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyResources.TinyResourcesFile.FileHeader">
+            <summary>
+            Tiny Resource file header.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.FileHeader.#ctor">
+            <summary>
+            Creates a blank instance of the <see cref="T:Terka.TinyResources.TinyResourcesFile.FileHeader"/> class.
+            </summary>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.FileHeader.#ctor(System.UInt32)">
+            <summary>
+            Creates a new instance of the <see cref="T:Terka.TinyResources.TinyResourcesFile.FileHeader"/> class with required values.
+            </summary>
+            <param name="numberOfResources"></param>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.FileHeader.ReadFrom(System.IO.BinaryReader)">
+            <summary>
+            Deserializes this structure from binary data.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.BinaryReader"/> to read the data from.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reader"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.FileHeader.WriteTo(System.IO.BinaryWriter)">
+            <summary>
+            Serializes this structure into binary data.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.BinaryWriter"/> to write the data to.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="writer"/> is null.</exception>
+        </member>
+        <member name="M:Terka.TinyResources.TinyResourcesFile.FileHeader.Update">
+            <summary>
+            Ensures this structure contains valid data.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.FileHeader.MagicNumber">
+            <summary>
+            Always A8 B0 95 F9.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.FileHeader.Version">
+            <summary>
+            Version of the Tiny Resource format.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.FileHeader.SizeOfHeader">
+            <summary>
+            Size of this header.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.FileHeader.SizeOfResourceHeader">
+            <summary>
+            Size of data resources header.
+            </summary>
+        </member>
+        <member name="P:Terka.TinyResources.TinyResourcesFile.FileHeader.NumberOfResoruces">
+            <summary>
+            Number of resources in the file.
+            </summary>
+        </member>
+        <member name="T:Terka.TinyResources.TinyResourceKind">
+            <summary>
+            Type of Tiny Resource.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyResources.TinyResourceKind.Invalid">
+            <summary>
+            Invalid type of resource.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyResources.TinyResourceKind.Bitmap">
+            <summary>
+            Bitmap resource.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyResources.TinyResourceKind.Font">
+            <summary>
+            Font resource.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyResources.TinyResourceKind.String">
+            <summary>
+            String resource.
+            </summary>
+        </member>
+        <member name="F:Terka.TinyResources.TinyResourceKind.Binary">
+            <summary>
+            Binary resource.
+            </summary>
+        </member>
+    </members>
+</doc>

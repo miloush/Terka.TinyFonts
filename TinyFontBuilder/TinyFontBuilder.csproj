@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA30CF80-CB40-4AF1-9E54-2C7CA6E73356}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Terka.TinyFonts</RootNamespace>
+    <AssemblyName>TinyFontBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TERKA_FEATURES</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestEnsures>False</CodeContractsSuggestEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>True</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;TERKA_FEATURES</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>TinyFontBuilder.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestEnsures>False</CodeContractsSuggestEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>True</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Tiny Font\Appendix 77\GlyphMetadataAppendix.MetadataSetOffset.cs" />
+    <Compile Include="TinyFontBuilder.BuilderState.cs" />
+    <Compile Include="DrawingVisualWithModes.cs" />
+    <Compile Include="Extension Methods\RectExtensions.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Tiny Font\Appendix 65\AttachmentPointsAppendix.cs" />
+    <Compile Include="Tiny Font\Appendix 65\AttachmentPointsAppendix.AttachmentList.cs" />
+    <Compile Include="Tiny Font\Appendix 77\GlyphMetadataAppendix.cs" />
+    <Compile Include="Tiny Font\Appendix 80, 83\StateMachineAppendix.HeapParameters.cs" />
+    <Compile Include="Tiny Font\Appendix 80, 83\StateMachineAppendix.PositionChange.cs" />
+    <Compile Include="Tiny Font\Appendix 80, 83\StateMachineAppendix.PositionChangesParameters.cs" />
+    <Compile Include="Tiny Font\Appendix 80, 83\SubstitutionAppendix.cs" />
+    <Compile Include="Tiny Font\Appendix 80, 83\PositioningAppendix.cs" />
+    <Compile Include="Tiny Font\Appendix 80, 83\StateMachineAppendix.FeatureFlags.cs" />
+    <Compile Include="Tiny Font\FontPlane.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="InitializedState.cs" />
+    <Compile Include="Interop\DWrite\DWrite.cs" />
+    <Compile Include="Interop\DWrite\Enums\FontFileType.cs" />
+    <Compile Include="Interop\DWrite\Enums\FontSimulations.cs" />
+    <Compile Include="Interop\DWrite\Enums\FontFaceType.cs" />
+    <Compile Include="Interop\DWrite\Enums\FactoryType.cs" />
+    <Compile Include="Interop\DWrite\Enums\MeasuringMode.cs" />
+    <Compile Include="Interop\DWrite\Enums\PixelGeometry.cs" />
+    <Compile Include="Interop\DWrite\Enums\RenderingMode.cs" />
+    <Compile Include="Interop\DWrite\Enums\TextAntialiasMode.cs" />
+    <Compile Include="Interop\DWrite\Interfaces\IDWriteBitmapRenderTarget1.cs" />
+    <Compile Include="Interop\DWrite\Interfaces\IDWriteFontFile.cs" />
+    <Compile Include="Interop\DWrite\Interfaces\IDWriteBitmapRenderTarget.cs" />
+    <Compile Include="Interop\DWrite\Interfaces\IDWriteFactory.cs" />
+    <Compile Include="Interop\DWrite\Interfaces\IDWriteFont.cs" />
+    <Compile Include="Interop\DWrite\Interfaces\IDWriteFontFace.cs" />
+    <Compile Include="Interop\DWrite\Interfaces\IDWriteGdiInterop.cs" />
+    <Compile Include="Interop\DWrite\Interfaces\IDWriteRenderingParams.cs" />
+    <Compile Include="Interop\DWrite\Structs\Matrix-Wpf.cs" />
+    <Compile Include="Interop\DWrite\Structs\GlyphOffset.cs" />
+    <Compile Include="Interop\DWrite\Structs\GlyphRun.cs" />
+    <Compile Include="Interop\DWrite\Structs\Matrix.cs" />
+    <Compile Include="Interop\DWrite\DWrite.UuidOf.cs" />
+    <Compile Include="Interop\Gdi32\Enums\ObjectType.cs" />
+    <Compile Include="Interop\Gdi32\Enums\FontCharSet.cs" />
+    <Compile Include="Interop\Gdi32\Enums\FontClipPrecision.cs" />
+    <Compile Include="Interop\Gdi32\Enums\FontLicensing.cs" />
+    <Compile Include="Interop\Gdi32\Enums\FontPattern.cs" />
+    <Compile Include="Interop\Gdi32\Enums\FontPitchAndFamily.cs" />
+    <Compile Include="Interop\Gdi32\Enums\FontPrecision.cs" />
+    <Compile Include="Interop\Gdi32\Enums\FontQuality.cs" />
+    <Compile Include="Interop\Gdi32\Enums\FontType.cs" />
+    <Compile Include="Interop\Gdi32\Enums\FontWeight.cs" />
+    <Compile Include="Interop\Gdi32\Gdi32.cs" />
+    <Compile Include="Interop\Gdi32\Structs\LogFont.cs" />
+    <Compile Include="Interop\Point.cs" />
+    <Compile Include="Interop\Rect.cs" />
+    <Compile Include="Interop\Size.cs" />
+    <Compile Include="Interop\User32\User32.cs" />
+    <Compile Include="IOpenTypeCompiler.cs" />
+    <Compile Include="Primitives\Int32Vector.cs" />
+    <Compile Include="Primitives\Int32Thickness.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TerkaTraceSources.cs" />
+    <Compile Include="Tiny Bitmap\BitmapDescription.cs" />
+    <Compile Include="Tiny Bitmap\BitmapDescriptionFlags.cs" />
+    <Compile Include="Tiny Bitmap\BitmapType.cs" />
+    <Compile Include="Tiny Font\Appendix 67\GlyphClassesAppendix.cs" />
+    <Compile Include="Tiny Font\Appendix 67\GlyphClassesAppendix.Coverage.cs" />
+    <Compile Include="Tiny Font\Appendix 80, 83\StateMachineAppendix.GlyphRewriteParameters.cs" />
+    <Compile Include="Tiny Font\Appendix 85\UnicodePlanesAppendix.cs" />
+    <Compile Include="Tiny Font\CharacterInfo.cs" />
+    <Compile Include="Tiny Font\AntialiasingMetrics.cs" />
+    <Compile Include="Tiny Font\Appendix 80, 83\StateMachineAppendix.Rule.cs" />
+    <Compile Include="Tiny Font\Appendix 80, 83\StateMachineAppendix.Feature.cs" />
+    <Compile Include="Tiny Font\Appendix 80, 83\StateMachineAppendix.FeatureOffset.cs" />
+    <Compile Include="Tiny Font\Appendix 80, 83\StateMachineAppendix.cs" />
+    <Compile Include="Tiny Font\CharacterRangeComparer.cs" />
+    <Compile Include="Tiny Font\FontAppendix.cs" />
+    <Compile Include="Tiny Font\CharacterDescription.cs" />
+    <Compile Include="Tiny Font\CharacterRangeDescription.cs" />
+    <Compile Include="Tiny Font\CharacterRangeAntialiasing.cs" />
+    <Compile Include="Tiny Font\CharacterAntialiasing.cs" />
+    <Compile Include="Tiny Font\FontDescriptionFlags.cs" />
+    <Compile Include="Tiny Font\FontDescription.cs" />
+    <Compile Include="Tiny Font\FontMetrics.cs" />
+    <Compile Include="Tiny Font\SentinelCollection.cs" />
+    <Compile Include="Tiny Font\TinyFont.FontPlanesCollection.cs" />
+    <Compile Include="Tiny Font\UnknownAppendix.cs" />
+    <Compile Include="TinyFontBuilder.CharacterImportInfo.cs" />
+    <Compile Include="TinyFontBuilder.cs" />
+    <Compile Include="Tiny Font\AntialiasingLevel.cs" />
+    <Compile Include="Tiny Resources\TinyResourcesFile.Resource.cs" />
+    <Compile Include="Tiny Resources\TinyResourceKind.cs" />
+    <Compile Include="Tiny Resources\TinyResourcesFile.ResourceHeader.cs" />
+    <Compile Include="Tiny Resources\TinyResourcesFile.FileHeader.cs" />
+    <Compile Include="Tiny Font\TinyFont.cs" />
+    <Compile Include="Tiny Resources\TinyResourcesFile.cs" />
+    <Compile Include="HelperUnsupported.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TinyFontBuilder.CharacterGlyphPair.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TinyFontBuilder.FeatureImportInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GraphemeBreakProperty.bin" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

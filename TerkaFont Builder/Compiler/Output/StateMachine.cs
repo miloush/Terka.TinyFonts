@@ -1,0 +1,138 @@
+﻿namespace Terka.FontBuilder.Compiler.Output
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    /// <summary>
+    /// Represents a glyph substitution state machine.
+    /// </summary>
+    public class StateMachine
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StateMachine" /> class.
+        /// </summary>
+        /// <param name="transitions">The transitions.</param>
+        /// <param name="states">The states. The first state will become entry state.</param>
+        /// <param name="processingDirection">The processing direction.</param>
+        public StateMachine(IEnumerable<ITransition> transitions, IEnumerable<State> states, ProcessingDirection processingDirection = ProcessingDirection.StartToEnd)
+        {
+            this.States = states.ToList();
+            this.Transitions = transitions.ToList();            
+            this.EntryState = this.States.First();
+
+            this.AnchorPoints = new List<AnchorPoint>();
+            this.GlyphIdSets = new List<HashSet<ushort>>();
+            this.ProcessingDirection = processingDirection;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StateMachine" /> class. This ctor is mosty for testing purposes (so a state
+        /// machine can be easily constructed, eveb though it won't be really valid).
+        /// </summary>
+        /// <param name="entryState">The entry state.</param>
+        /// <param name="processingDirection">The processing direction.</param>
+        public StateMachine(State entryState, ProcessingDirection processingDirection = ProcessingDirection.StartToEnd) : this(new ITransition[] { }, new[] { entryState })
+        {
+            var statesAndTransitions = this.AssembleComponentLists();
+            this.States = statesAndTransitions.Item2.ToList();
+            this.Transitions = statesAndTransitions.Item1.ToList();
+            this.ProcessingDirection = processingDirection;
+        }
+
+        /// <summary>
+        /// Gets the collection of all glyph ID sets defined by this state machine.
+        /// </summary>
+        /// <value>
+        /// The collection of glyph ID sets.
+        /// </value>
+        public List<HashSet<ushort>> GlyphIdSets { get; private set; }
+
+        /// <summary>
+        /// Gets the anchor points used by glyphs in this state machine.
+        /// </summary>
+        /// <value>
+        /// The collection of anchor points.
+        /// </value>
+        public List<AnchorPoint> AnchorPoints { get; private set; } 
+
+        /// <summary>
+        /// Gets the collection of all states defined by this state machine.
+        /// </summary>
+        /// <value>
+        /// The collection of states.
+        /// </value>
+        public List<State> States { get; private set; }
+
+        /// <summary>
+        /// Gets the collection of all transitions define by this state machine.
+        /// </summary>
+        /// <value>
+        /// The collection of transitions.
+        /// </value>
+        public List<ITransition> Transitions { get; private set; }
+
+        /// <summary>
+        /// Gets the state from which the state machine execution begins. This state is also used as fallback in case there is no transition from current state for current glyph -
+        /// the machine then transitions to this state without moving the head or writing anything to the tape.
+        /// </summary>
+        /// <value>
+        /// The state of the entry.
+        /// </value>
+        public State EntryState { get; private set; }
+
+        /// <summary>
+        /// Gets the direction from which the state machine enters the string being processed.
+        /// </summary>
+        /// <value>
+        /// The processing direction.
+        /// </value>
+        public ProcessingDirection ProcessingDirection { get; private set; }
+
+        private Tuple<IEnumerable<ITransition>, IEnumerable<State>> AssembleComponentLists()
+        {
+            var queue = new Queue<State>();
+            queue.Enqueue(this.EntryState);
+
+            var transitions = new List<ITransition>();
+            var states = new HashSet<State> { this.EntryState };
+
+            while (queue.Any())
+            {                
+                var currentState = queue.Dequeue();
+
+                transitions.AddRange(currentState.Transitions);
+
+                var reachableStates = new HashSet<State>(currentState.Transitions.Select(p => p.TargetState).Distinct());
+                reachableStates.ExceptWith(states);
+                foreach (var reachableState in reachableStates)
+                {
+                    states.Add(reachableState);
+                    queue.Enqueue(reachableState);
+                }
+            }
+
+            return new Tuple<IEnumerable<ITransition>, IEnumerable<State>>(transitions, states);
+        }
+
+        /// <summary>
+        /// Gets collection of all glyphs that can be possibly generated by this state machine. Context terminator is included if used.
+        /// </summary>
+        /// <returns>Collection of all glyphs that can be possibly generated by this state machine. The collection is ordered from least to
+        /// greates glyph ID.</returns>
+        public IEnumerable<ushort> GetGeneratedGlyphIds()
+        {
+            return this.Transitions
+                .Select(p => p.Action)
+                .OfType<SubstitutionAction>()
+                .SelectMany(p => p.ReplacementGlyphIds)
+                .OrderBy(p => p)
+                .Distinct();
+        }
+
+        public override string ToString()
+        {
+            return "State machine (# of states: " + this.States.Count + ", # of transitions: " + this.Transitions.Count + ", " + this.ProcessingDirection + ")";
+        }
+    }
+}
