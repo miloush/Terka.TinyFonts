@@ -57,8 +57,8 @@
             var metadata = new GlyphMetadata
             {
                 CharacterToGlyphIdMapping = cmapParser.GetCharacterToGlyphIdMapping(typeface).GetValueOrDefault,
-                GlyphIdToGlyphClassMapping = gdefParser.GetGlyphClasses(typeface).GetValueOrDefault,
-                GlyphIdToMarkAttachClassIdMapping = gdefParser.GetMarkAttachClassIds(typeface).GetValueOrDefault,
+                GlyphIdToGlyphClassMapping = ((IDictionary<ushort, GlyphClass>)gdefParser.GetGlyphClasses(typeface)).GetValueOrDefault,
+                GlyphIdToMarkAttachClassIdMapping = ((IDictionary<ushort, ushort>)gdefParser.GetMarkAttachClassIds(typeface)).GetValueOrDefault,
             };
 
             var gsubParser = new GsubParser();

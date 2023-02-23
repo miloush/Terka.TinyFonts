@@ -1,155 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1DA137C9-766B-4522-ABCC-59E81E0B6379}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <DebugType>embedded</DebugType>
+    <LangVersion>latest</LangVersion>
+    <GenerateDoucmentationFile>true</GenerateDoucmentationFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <RootNamespace>Terka.FontBuilder</RootNamespace>
     <AssemblyName>TerkaFontBuilder</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Terka.FontBuilder.XML</DocumentationFile>
-  </PropertyGroup>
+</PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Compiler\InvalidPathException.cs" />
-    <Compile Include="Compiler\IStateMachineBuilder.cs" />
-    <Compile Include="Compiler\Output\AlwaysTransition.cs" />
-    <Compile Include="AnchorPoint.cs" />
-    <Compile Include="Compiler\Output\AnchorPointToAnchorPointAction.cs" />
-    <Compile Include="Compiler\Output\ITransitionAction.cs" />
-    <Compile Include="Compiler\Output\PositioningAdjustmentAction.cs" />
-    <Compile Include="Compiler\Output\State.cs" />
-    <Compile Include="Compiler\PositioningCompiler.cs" />
-    <Compile Include="Compiler\StateMachineBuilder.cs" />
-    <Compile Include="Compiler\SubMachineBuilder.cs" />
-    <Compile Include="Compiler\TransformationCompilerBase.cs" />
-    <Compile Include="Compiler\TransitionActionEqualityComparer.cs" />
-    <Compile Include="Extensions\DictionaryExtensions.cs" />
-    <Compile Include="Extensions\EnumerableExtensions.cs" />
-    <Compile Include="GlyphMetadata.cs" />
-    <Compile Include="HashCodeBuilder.cs" />
-    <Compile Include="LookupFlags.cs" />
-    <Compile Include="OpenTypeCompiler.cs" />
-    <Compile Include="Optimizer\StateMachineNormalizer.cs" />
-    <Compile Include="Optimizer\FastEquivalenceQueue.cs" />
-    <Compile Include="Optimizer\StateMachineOptimizer.cs" />
-    <Compile Include="Optimizer\StateMachineTransitionSorter.cs" />
-    <Compile Include="Parser\CmapParser.cs" />
-    <Compile Include="Parser\GdefParser.cs" />
-    <Compile Include="Parser\GposParser.cs" />
-    <Compile Include="Parser\GsubParser.cs" />
-    <Compile Include="Parser\Output\CoverageRange.cs" />
-    <Compile Include="Parser\Output\Positioning\CursivePositioningTable.cs" />
-    <Compile Include="Parser\Output\Positioning\MarkToBasePositioningTable.cs" />
-    <Compile Include="Parser\Output\Substitution\Ligature.cs" />
-    <Compile Include="Parser\Reflection\AccessPrivateWrapper.cs" />
-    <Compile Include="Parser\Reflection\Extensions\ObjectExtensions.cs" />
-    <Compile Include="Parser\Reflection\Extensions\TypeExtensions.cs" />
-    <Compile Include="Compiler\SubstitutionCompiler.cs" />
-    <Compile Include="Compiler\TransitionNonrecursiveEqualityComparer.cs" />
-    <Compile Include="Parser\TableParserBase.cs" />
-    <Compile Include="Parser\TransformationParserBase.cs" />
-    <Compile Include="Simulator\Extensions\LinkedListNodeExtensions.cs" />
-    <Compile Include="Simulator\StateMachineSimulator.cs" />
-    <Compile Include="TagConverter.cs" />
-    <Compile Include="Parser\Output\Context\ChainingClassContextTransformationTable.cs" />
-    <Compile Include="Parser\Output\Context\ChainingContextTransformationRule.cs" />
-    <Compile Include="Parser\Output\Context\ChainingCoverageContextSubstitutionTable.cs" />
-    <Compile Include="Parser\Output\Context\ChainingGlyphContextTransformationTable.cs" />
-    <Compile Include="Parser\Output\Context\ChainingRuleContextTransformationTableBase.cs" />
-    <Compile Include="Parser\Output\Positioning\ClassContextPositioningTable.cs" />
-    <Compile Include="Parser\Output\Context\ClassContextTransformationTable.cs" />
-    <Compile Include="Parser\Output\Positioning\ClassPairPositioningTable.cs" />
-    <Compile Include="Parser\Output\Positioning\ConstantPositioningTable.cs" />
-    <Compile Include="Parser\Output\Positioning\ContextRulePositioningTable.cs" />
-    <Compile Include="Parser\Output\Context\GlyphContextTransformationTable.cs" />
-    <Compile Include="Parser\Output\Context\ContextRuleTransformationTableBase.cs" />
-    <Compile Include="Parser\Output\Context\ContextTransformationSet.cs" />
-    <Compile Include="Parser\Output\Context\ContextTransformationRule.cs" />
-    <Compile Include="Parser\Output\Context\CoverageContextTransformationTable.cs" />
-    <Compile Include="Parser\Output\CoveredGlyphTransformationTableBase.cs" />
-    <Compile Include="Parser\Output\Substitution\DeltaSubstitutionTable.cs" />
-    <Compile Include="GlyphPositionChange.cs" />
-    <Compile Include="Parser\Output\ICoverageTable.cs" />
-    <Compile Include="Parser\Output\IGlyphClassDefinition.cs" />
-    <Compile Include="Parser\Output\IGlyphTransformationTable.cs" />
-    <Compile Include="Parser\Output\Positioning\IndividualChangePositioningTable.cs" />
-    <Compile Include="Parser\Output\Substitution\LigatureSubstitutionTable.cs" />
-    <Compile Include="Parser\Output\ListCoverageTable.cs" />
-    <Compile Include="Parser\Output\ListGlyphClassDefinition.cs" />
-    <Compile Include="Parser\Output\Substitution\MultipleSubstitutionTable.cs" />
-    <Compile Include="Parser\Output\Positioning\GlyphPairPositioningTable.cs" />
-    <Compile Include="Parser\Output\Positioning\PositioningClassPair.cs" />
-    <Compile Include="Parser\Output\Positioning\PositioningPair.cs" />
-    <Compile Include="Parser\Output\RangeCoverageTable.cs" />
-    <Compile Include="Parser\Output\RangeGlyphClassDefinition.cs" />
-    <Compile Include="Parser\Output\Substitution\ReverseChainingContextSubstitutionTable.cs" />
-    <Compile Include="Parser\Output\Substitution\SimpleReplacementSubstitutionTable.cs" />
-    <Compile Include="Parser\UnknownTableFormatException.cs" />
-    <Compile Include="Tag.cs" />
-    <Compile Include="Compiler\Output\ITransition.cs" />
-    <Compile Include="Compiler\Output\SetTransition.cs" />
-    <Compile Include="Compiler\Output\SimpleTransition.cs" />
-    <Compile Include="Glyph.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Compiler\Output\SubstitutionAction.cs" />
-    <Compile Include="Compiler\Output\StateMachine.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TinyFontBuilder\TinyFontBuilder.csproj">
-      <Project>{ea30cf80-cb40-4af1-9e54-2c7ca6e73356}</Project>
-      <Name>TinyFontBuilder</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+ <ItemGroup>
+    <ProjectReference Include="..\TinyFontBuilder\TinyFontBuilder.csproj" />
+ </ItemGroup>
 </Project>

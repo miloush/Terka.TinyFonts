@@ -11,32 +11,32 @@
     /// </summary>
     public static class EnumerableExtensions
     {
-        /// <summary>
-        /// Returns the collection with specified element appended to its end.
-        /// </summary>
-        /// <typeparam name="T">Type of elements in the collection.</typeparam>
-        /// <param name="collection">The collection.</param>
-        /// <param name="appendee">The appendee.</param>
-        /// <returns>The collection with specified element appended to its end.</returns>
-        public static IEnumerable<T> Append<T>(this IEnumerable<T> collection, T appendee)
-        {
-            if (collection == null)
-            {
-                throw new ArgumentNullException("collection");
-            }
+        ///// <summary>
+        ///// Returns the collection with specified element appended to its end.
+        ///// </summary>
+        ///// <typeparam name="T">Type of elements in the collection.</typeparam>
+        ///// <param name="collection">The collection.</param>
+        ///// <param name="appendee">The appendee.</param>
+        ///// <returns>The collection with specified element appended to its end.</returns>
+        //public static IEnumerable<T> Append<T>(this IEnumerable<T> collection, T appendee)
+        //{
+        //    if (collection == null)
+        //    {
+        //        throw new ArgumentNullException("collection");
+        //    }
 
-            if (appendee == null)
-            {
-                throw new ArgumentNullException("appendee");
-            }
+        //    if (appendee == null)
+        //    {
+        //        throw new ArgumentNullException("appendee");
+        //    }
 
-            foreach (var item in collection)
-            {
-                yield return item;
-            }
+        //    foreach (var item in collection)
+        //    {
+        //        yield return item;
+        //    }
 
-            yield return appendee;
-        }
+        //    yield return appendee;
+        //}
 
         /// <summary>
         /// Returns the collection with specified collection appended to its end.
@@ -68,32 +68,32 @@
             }
         }
 
-        /// <summary>
-        /// Returns the collection with specified element prepended before its first element.
-        /// </summary>
-        /// <typeparam name="T">Type of elements in the collection.</typeparam>
-        /// <param name="collection">The collection.</param>
-        /// <param name="prependee">The prependee.</param>
-        /// <returns>The collection with specified element prepended before its first element.</returns>
-        public static IEnumerable<T> Prepend<T>(this IEnumerable<T> collection, T prependee)
-        {
-            if (collection == null)
-            {
-                throw new ArgumentNullException("collection");
-            }
+        ///// <summary>
+        ///// Returns the collection with specified element prepended before its first element.
+        ///// </summary>
+        ///// <typeparam name="T">Type of elements in the collection.</typeparam>
+        ///// <param name="collection">The collection.</param>
+        ///// <param name="prependee">The prependee.</param>
+        ///// <returns>The collection with specified element prepended before its first element.</returns>
+        //public static IEnumerable<T> Prepend<T>(this IEnumerable<T> collection, T prependee)
+        //{
+        //    if (collection == null)
+        //    {
+        //        throw new ArgumentNullException("collection");
+        //    }
 
-            if (prependee == null)
-            {
-                throw new ArgumentNullException("prependee");
-            }
+        //    if (prependee == null)
+        //    {
+        //        throw new ArgumentNullException("prependee");
+        //    }
 
-            yield return prependee;
+        //    yield return prependee;
 
-            foreach (var item in collection)
-            {
-                yield return item;
-            }            
-        }
+        //    foreach (var item in collection)
+        //    {
+        //        yield return item;
+        //    }
+        //}
 
         /// <summary>
         /// Compares two collections.
@@ -115,7 +115,7 @@
             {
                 throw new ArgumentNullException("otherCollection");
             }
-            
+
             if (comparer == null)
             {
                 comparer = EqualityComparer<T>.Default;
@@ -132,6 +132,7 @@
             return collectionAList.Zip(collectionBList, (a, b) => comparer.Equals(a, b)).All(p => p);
         }
 
+#if !NET
         /// <summary>
         /// Zips the two collections together generating a collection of tuples.
         /// </summary>
@@ -144,6 +145,7 @@
         {
             return first.Zip(second, Tuple.Create);
         }
+#endif
 
         /// <summary>
         /// Converts a collection of key-value pairs to a dictionary.

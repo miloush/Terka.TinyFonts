@@ -142,9 +142,9 @@
                                 {
                                     return true;
                                 }
-                                
-                                var waitingForConfirmationFirstStateInfo = waitingForBacktransitionConfirmationMap.GetValueOrDefault(pair.firstStateTransition.TargetState);
-                                var waitingForConfirmationCurrentStateInfo = waitingForBacktransitionConfirmationMap.GetValueOrDefault(pair.currentStateTransition.TargetState);
+
+                                var waitingForConfirmationFirstStateInfo = ((IDictionary<State, WaitingForConfirmationInfo>)waitingForBacktransitionConfirmationMap).GetValueOrDefault(pair.firstStateTransition.TargetState);
+                                var waitingForConfirmationCurrentStateInfo = ((IDictionary<State, WaitingForConfirmationInfo>)waitingForBacktransitionConfirmationMap).GetValueOrDefault(pair.currentStateTransition.TargetState);
 
                                 /*Console.WriteLine(
                                     "Waiting template: first " +

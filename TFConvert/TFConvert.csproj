@@ -1,108 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F523E4B9-9E1F-4FC8-A23B-ACD97AE72C66}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <DebugType>embedded</DebugType>
+    <LangVersion>latest</LangVersion>
+    <GenerateDoucmentationFile>true</GenerateDoucmentationFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <RootNamespace>Terka.TinyFonts.TFConvert</RootNamespace>
     <AssemblyName>TFConvert</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <DefineConstants>$(DefineConstants);TERKA_FEATURES</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;TERKA_FEATURES</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;TERKA_FEATURES</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\TFConvert.XML</DocumentationFile>
-  </PropertyGroup>
+
   <PropertyGroup>
-    <StartupObject>Terka.TinyFonts.TFConvert.TFConvertConsole</StartupObject>
+    <PackageId>Terka.TinyFonts.TFConvert</PackageId>
+    <PackageVersion>1.0</PackageVersion>
+    <Authors>miloush</Authors>
+    <Description>.NET Micro Framework Tiny Font conversion tool.</Description>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://terka.microframework.cz/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/miloush/Terka.TinyFonts</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>TFConvert.md</PackageReadmeFile>
+    <PackageTags>netmf;gadgeteer;tinyfonts;terka</PackageTags>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='net6.0-windows'">
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>tfconvert</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
+    <ProjectReference Include="..\TerkaFont Builder\TerkaFont Builder.csproj" />
+    <ProjectReference Include="..\TinyFontBuilder\TinyFontBuilder.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Attributes\RequiresCommandAttribute.cs" />
-    <Compile Include="Attributes\TinyCommandAttribute.cs" />
-    <Compile Include="Attributes\TinyParameterAttribute.cs" />
-    <Compile Include="Common\CommandLineHelper.cs" />
-    <Compile Include="Common\ConsoleHelper.cs" />
-    <Compile Include="Definitions\Adjustments\OffsetY.cs" />
-    <Compile Include="Definitions\Adjustments\AdjustDescent.cs" />
-    <Compile Include="Definitions\Adjustments\AdjustExternalLeading.cs" />
-    <Compile Include="Definitions\Adjustments\AdjustInternalLeading.cs" />
-    <Compile Include="Definitions\Adjustments\AdjustAscent.cs" />
-    <Compile Include="Definitions\Adjustments\AdjustLeftMargin.cs" />
-    <Compile Include="Definitions\Adjustments\AdjustRightMargin.cs" />
-    <Compile Include="Definitions\Adjustments\OffsetX.cs" />
-    <Compile Include="Definitions\Font selection\AddFontToProcess.cs" />
-    <Compile Include="Definitions\Imports\ImportFeature.cs" />
-    <Compile Include="Definitions\Imports\ImportGlyphRange.cs" />
-    <Compile Include="Definitions\Imports\ImportGlyphRangeAndMap.cs" />
-    <Compile Include="Definitions\Others\AntiAlias.cs" />
-    <Compile Include="Definitions\Others\Verbosity.cs" />
-    <Compile Include="Definitions\TinyAdjustmentCommandBase.cs" />
-    <Compile Include="Definitions\Default character\SetAsDefaultCharacter.cs" />
-    <Compile Include="Definitions\Default character\SetDefaultCharacter.cs" />
-    <Compile Include="Definitions\Default character\NoDefaultCharacter.cs" />
-    <Compile Include="Definitions\Font selection\SelectFont.cs" />
-    <Compile Include="Definitions\Imports\ImportRangeAndMap.cs" />
-    <Compile Include="Definitions\Imports\ImportRange.cs" />
-    <Compile Include="Definitions\TinyCommandBase.cs" />
-    <Compile Include="Definitions\TinyDefinition.cs" />
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="TFConvert.CommandLine.cs" />
-    <Compile Include="TFConvert.cs" />
-    <Compile Include="TFConvertConsole.cs" />
+    <None Include="TFConvert.md" Pack="true" PackagePath="\" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Definitions\Others\Verbosity.VerbosityLevel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TerkaFont Builder\TerkaFont Builder.csproj">
-      <Project>{1da137c9-766b-4522-abcc-59e81e0b6379}</Project>
-      <Name>TerkaFont Builder</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TinyFontBuilder\TinyFontBuilder.csproj">
-      <Project>{ea30cf80-cb40-4af1-9e54-2c7ca6e73356}</Project>
-      <Name>TinyFontBuilder</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
