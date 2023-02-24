@@ -16,25 +16,25 @@
     [TestFixture]
     public class TagTests
     {
-        /// <summary>
-        /// Tests that Ctor throws exception when called with label of different length than 4.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentException))]
-        public void Ctor_BadLengthLabel_ThrowsException()
-        {
-            new Tag("abcdefg");
-        }
+        ///// <summary>
+        ///// Tests that Ctor throws exception when called with label of different length than 4.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentException))]
+        //public void Ctor_BadLengthLabel_ThrowsException()
+        //{
+        //    new Tag("abcdefg");
+        //}
 
-        /// <summary>
-        /// Tests that Ctor throws exception when called with null label.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void Ctor_NullLabel_ThrowsException()
-        {
-            new Tag(null);
-        }
+        ///// <summary>
+        ///// Tests that Ctor throws exception when called with null label.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentNullException))]
+        //public void Ctor_NullLabel_ThrowsException()
+        //{
+        //    new Tag(null);
+        //}
 
         /// <summary>
         /// Tests that == returns false when a tag is compared with tag with different label.

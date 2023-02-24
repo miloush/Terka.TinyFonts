@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyFontBuilder", "TinyFontBuilder\TinyFontBuilder.csproj", "{EA30CF80-CB40-4AF1-9E54-2C7CA6E73356}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TinyFontBuilder", "TinyFontBuilder\TinyFontBuilder.csproj", "{EA30CF80-CB40-4AF1-9E54-2C7CA6E73356}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFConvert", "TFConvert\TFConvert.csproj", "{F523E4B9-9E1F-4FC8-A23B-ACD97AE72C66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TFConvert", "TFConvert\TFConvert.csproj", "{F523E4B9-9E1F-4FC8-A23B-ACD97AE72C66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerkaFont Builder", "TerkaFont Builder\TerkaFont Builder.csproj", "{1DA137C9-766B-4522-ABCC-59E81E0B6379}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerkaFont Builder", "TerkaFont Builder\TerkaFont Builder.csproj", "{1DA137C9-766B-4522-ABCC-59E81E0B6379}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerkaFont Builder.Tests.Integration", "TerkaFont Builder.Tests.Integration\TerkaFont Builder.Tests.Integration.csproj", "{937582E3-7E82-4EE3-A9D1-4D5A183A44C8}"
 EndProject
@@ -40,5 +42,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59FA247D-A008-47F8-A34E-F8EA3B6076DA}
 	EndGlobalSection
 EndGlobal

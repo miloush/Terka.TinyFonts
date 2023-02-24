@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
 
@@ -13,6 +14,13 @@ namespace Terka.TinyFonts.TFConvert
 
         private static void Main(string[] args)
         {
+            // if this ever gets here, check if we're running on Windows
+            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                Console.WriteLine("This tool can only run on Windows!");
+                return;
+            }
+
             Console.InputEncoding = Encoding.UTF8;
             Console.OutputEncoding = Encoding.UTF8;
 
@@ -83,7 +91,7 @@ namespace Terka.TinyFonts.TFConvert
 
         private static void DumpFont(TinyDefinition definition, TinyFont font, TextWriter textWriter)
         {
-            
+
         }
     }
 }
