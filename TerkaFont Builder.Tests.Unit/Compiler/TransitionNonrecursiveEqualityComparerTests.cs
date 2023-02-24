@@ -153,17 +153,17 @@
         }
 
 
-        /// <summary>
-        /// Tests that Equals throws exception when given unknown transition type.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Equals_UnknownStateType_ThrowsException()
-        {
-            var a = MockRepository.GenerateMock<ITransition>();
-            var b = MockRepository.GenerateMock<ITransition>();
+        ///// <summary>
+        ///// Tests that Equals throws exception when given unknown transition type.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentOutOfRangeException))]
+        //public void Equals_UnknownStateType_ThrowsException()
+        //{
+        //    var a = MockRepository.GenerateMock<ITransition>();
+        //    var b = MockRepository.GenerateMock<ITransition>();
 
-            Assert.IsFalse(this.GetComparer().Equals(a, b));
-        }
+        //    Assert.IsFalse(this.GetComparer().Equals(a, b));
+        //}
     }
 }

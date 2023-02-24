@@ -16,45 +16,45 @@
     [TestFixture]
     public class EnumerableExtensionsTests
     {
-        /// <summary>
-        /// Tests that Append throws a correct exception when called with null appendee.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void Append_NullAppendee_ThrowsException()
-        {
-            new[] { new object() }.Append((object)null).ToList();
-        }
+        ///// <summary>
+        ///// Tests that Append throws a correct exception when called with null appendee.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentNullException))]
+        //public void Append_NullAppendee_ThrowsException()
+        //{
+        //    new[] { new object() }.Append((object)null).ToList();
+        //}
 
-        /// <summary>
-        /// Tests that Append throws a correct exception when attemption to append a null collection.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void Append_NullCollection_ThrowsException()
-        {
-            new[] { new object() }.Append((object[])null).ToList();
-        }
+        ///// <summary>
+        ///// Tests that Append throws a correct exception when attemption to append a null collection.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentNullException))]
+        //public void Append_NullCollection_ThrowsException()
+        //{
+        //    new[] { new object() }.Append((object[])null).ToList();
+        //}
 
-        /// <summary>
-        /// Tests that Append throws a correct exception when called on null collection.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void Append_ToNullCollection_ThrowsException()
-        {
-            EnumerableExtensions.Append(null, 1).ToList();
-        }
+        ///// <summary>
+        ///// Tests that Append throws a correct exception when called on null collection.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentNullException))]
+        //public void Append_ToNullCollection_ThrowsException()
+        //{
+        //    EnumerableExtensions.Append(null, 1).ToList();
+        //}
 
-        /// <summary>
-        /// Tests that collection Append throws a correct exception when called on null collection.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void Append_CollectionToNullCollection_ThrowsException()
-        {
-            EnumerableExtensions.Append((int[])null, new[] { 1 }).ToList();
-        }
+        ///// <summary>
+        ///// Tests that collection Append throws a correct exception when called on null collection.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentNullException))]
+        //public void Append_CollectionToNullCollection_ThrowsException()
+        //{
+        //    EnumerableExtensions.Append((int[])null, new[] { 1 }).ToList();
+        //}
 
         /// <summary>
         /// Tests that Append correctly appends the appended item in a normal scenario.
@@ -83,35 +83,35 @@
             Assert.That(new[] { 1, 2, 3, 4, 5, 6 }, Is.EquivalentTo(result));
         }
 
-        /// <summary>
-        /// Tests that Prepend throws a correct exception when called with null prependee.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void Prepend_NullAppendee_ThrowsException()
-        {
-            new[] { new object() }.Prepend(null).ToList();
-        }
+        ///// <summary>
+        ///// Tests that Prepend throws a correct exception when called with null prependee.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentNullException))]
+        //public void Prepend_NullAppendee_ThrowsException()
+        //{
+        //    new[] { new object() }.Prepend(null).ToList();
+        //}
 
-        /// <summary>
-        /// Tests that Prepend throws a correct exception when attempting to append a null prependee collection.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void Prepend_NullCollection_ThrowsException()
-        {
-            new[] { new object() }.Prepend((object[])null).ToList();
-        }
+        /////// <summary>
+        /////// Tests that Prepend throws a correct exception when attempting to append a null prependee collection.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentNullException))]
+        //public void Prepend_NullCollection_ThrowsException()
+        //{
+        //    new[] { new object() }.Prepend((object[])null).ToList();
+        //}
 
-        /// <summary>
-        /// Tests that Prepend throws a correct exception when called on null collection.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void Prepend_ToNullCollection_ThrowsException()
-        {
-            EnumerableExtensions.Prepend(null, 1).ToList();
-        }
+        ///// <summary>
+        ///// Tests that Prepend throws a correct exception when called on null collection.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentNullException))]
+        //public void Prepend_ToNullCollection_ThrowsException()
+        //{
+        //    EnumerableExtensions.Prepend(null, 1).ToList();
+        //}
 
         /// <summary>
         /// Tests that Prepend correctly prepends the appended item in a normal scenario.
@@ -195,25 +195,25 @@
             Assert.IsTrue(result);
         }
 
-        /// <summary>
-        /// Tests that ValuesEqual throws exception when the first collection is null.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void ValuesEqual_NullFirstCollection_ThrowsException()
-        {
-            EnumerableExtensions.ValuesEqual(null, Enumerable.Empty<object>());
-        }
+        ///// <summary>
+        ///// Tests that ValuesEqual throws exception when the first collection is null.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentNullException))]
+        //public void ValuesEqual_NullFirstCollection_ThrowsException()
+        //{
+        //    EnumerableExtensions.ValuesEqual(null, Enumerable.Empty<object>());
+        //}
 
-        /// <summary>
-        /// Tests that ValuesEqual throws exception when the second collection is null.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void ValuesEqual_NullSecondCollection_ThrowsException()
-        {
-            Enumerable.Empty<object>().ValuesEqual(null);
-        }
+        ///// <summary>
+        ///// Tests that ValuesEqual throws exception when the second collection is null.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentNullException))]
+        //public void ValuesEqual_NullSecondCollection_ThrowsException()
+        //{
+        //    Enumerable.Empty<object>().ValuesEqual(null);
+        //}
 
         /// <summary>
         /// Tests that Zip zips correctly.

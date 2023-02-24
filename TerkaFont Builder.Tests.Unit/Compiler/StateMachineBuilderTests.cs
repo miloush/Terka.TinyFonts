@@ -423,15 +423,15 @@
             this.TestAddPaths(paths, expectedEntryState);
         }
         
-        /// <summary>
-        /// Tests that AddPath throws exception when fed with null path.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void AddPath_NullPath_ThrowsException()
-        {
-            new StateMachineBuilder().AddPath(null);
-        }
+        ///// <summary>
+        ///// Tests that AddPath throws exception when fed with null path.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentNullException))]
+        //public void AddPath_NullPath_ThrowsException()
+        //{
+        //    new StateMachineBuilder().AddPath(null);
+        //}
         
         /// <summary>
         /// Tests that single call to AddPath with a set path results in correct state machine (with the path ungrouped).

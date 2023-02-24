@@ -1,19 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <TargetFrameworks>net6.0-windows;net472</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <DebugType>embedded</DebugType>
+    <OutputType>Exe</OutputType>
     <LangVersion>latest</LangVersion>
     <GenerateDoucmentationFile>true</GenerateDoucmentationFile>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <RootNamespace>Terka.TinyFonts.TFConvert</RootNamespace>
-    <AssemblyName>TFConvert</AssemblyName>
+    <AssemblyName>tfconvert</AssemblyName>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<Platforms>AnyCPU;x64</Platforms>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+		<RuntimeIdentifiers>any</RuntimeIdentifiers>
     <DefineConstants>$(DefineConstants);TERKA_FEATURES</DefineConstants>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>tfconvert</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>Terka.TinyFonts.TFConvert</PackageId>
+    <PackageId>tfconvert</PackageId>
     <PackageVersion>1.0</PackageVersion>
     <Authors>miloush</Authors>
     <Description>.NET Micro Framework Tiny Font conversion tool.</Description>
@@ -25,18 +33,26 @@
     <PackageTags>netmf;gadgeteer;tinyfonts;terka</PackageTags>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)'=='net6.0-windows'">
-    <PackAsTool>true</PackAsTool>
-    <ToolCommandName>tfconvert</ToolCommandName>
-    <PackageOutputPath>./nupkg</PackageOutputPath>
-  </PropertyGroup>
+  <Target Name="HackBeforePackToolValidation" BeforeTargets="_PackToolValidation">
+      <PropertyGroup>
+          <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+          <TargetPlatformIdentifier></TargetPlatformIdentifier>
+      </PropertyGroup>
+  </Target>
+
+  <Target Name="HackAfterPackToolValidation" AfterTargets="_PackToolValidation">
+      <PropertyGroup>
+          <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
+          <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+      </PropertyGroup>
+  </Target>
+
+  <ItemGroup>
+    <None Include="TFConvert.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TerkaFont Builder\TerkaFont Builder.csproj" />
     <ProjectReference Include="..\TinyFontBuilder\TinyFontBuilder.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="TFConvert.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>

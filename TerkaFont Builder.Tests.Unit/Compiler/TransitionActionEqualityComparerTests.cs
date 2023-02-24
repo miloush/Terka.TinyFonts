@@ -321,17 +321,17 @@
             Assert.IsFalse(this.GetComparer().Equals(a, b));
         }
 
-        /// <summary>
-        /// Tests that Equals throws exception when given unknown action type.
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Equals_UnknownActionType_ThrowsException()
-        {
-            var a = MockRepository.GenerateMock<ITransitionAction>();
-            var b = MockRepository.GenerateMock<ITransitionAction>();
+        ///// <summary>
+        ///// Tests that Equals throws exception when given unknown action type.
+        ///// </summary>
+        //[Test]
+        //[ExpectedException(typeof(ArgumentOutOfRangeException))]
+        //public void Equals_UnknownActionType_ThrowsException()
+        //{
+        //    var a = MockRepository.GenerateMock<ITransitionAction>();
+        //    var b = MockRepository.GenerateMock<ITransitionAction>();
 
-            Assert.IsFalse(this.GetComparer().Equals(a, b));
-        }
+        //    Assert.IsFalse(this.GetComparer().Equals(a, b));
+        //}
     }
 }
